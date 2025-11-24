@@ -662,15 +662,12 @@ body {
 	.nav-button { padding: 12px 20px; font-size: 12px; }
 	.destacados { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; width: 100%; }
 	.mascomprado { margin: 20px auto; }
-	.carrusel-container { width: 95%; padding: 0 50px; }
+	.carrusel-container { width: 95%; padding: 0 20px; }
+	
+	/* OCULTAR flechas en tablets */
 	.carrusel-btn { 
-		width: 45px; 
-		height: 45px; 
-		font-size: 20px; 
-		padding: 0;
+		display: none;
 	}
-	.carrusel-btn.prev { left: 8px; }
-	.carrusel-btn.next { right: 8px; }
 	
 	/* Mostrar indicador de deslizamiento solo en tablets */
 	.swipe-indicator {
@@ -766,15 +763,12 @@ body {
 		max-width: 280px;
 	}
 	
-	.carrusel-container { width: 100%; padding: 0 35px; margin: 30px 0; }
+	.carrusel-container { width: 100%; padding: 0 15px; margin: 30px 0; }
+	
+	/* OCULTAR flechas en móviles */
 	.carrusel-btn { 
-		width: 35px; 
-		height: 35px; 
-		font-size: 16px; 
-		padding: 0;
+		display: none;
 	}
-	.carrusel-btn.prev { left: 3px; }
-	.carrusel-btn.next { right: 3px; }
 	
 	/* Mostrar indicador de deslizamiento en móviles */
 	.swipe-indicator {
