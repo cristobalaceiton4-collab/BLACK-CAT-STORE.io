@@ -561,6 +561,51 @@ body {
 	right: 15px;
 }
 
+/* Indicador de deslizamiento para móviles */
+.swipe-indicator {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	margin-top: 15px;
+	opacity: 0.7;
+}
+
+.swipe-track {
+	width: 60px;
+	height: 4px;
+	background-color: rgba(0, 0, 0, 0.15);
+	border-radius: 2px;
+	position: relative;
+	overflow: hidden;
+}
+
+.swipe-dot {
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(135deg, #1a1a1a, #444);
+	border-radius: 50%;
+	position: absolute;
+	top: -4px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+	animation: swipeAnimation 2s ease-in-out infinite;
+}
+
+@keyframes swipeAnimation {
+	0% { left: -12px; }
+	50% { left: 60px; }
+	100% { left: -12px; }
+}
+
+.swipe-text {
+	font-size: 11px;
+	color: #666;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-family: Arial, sans-serif;
+}
+
 /* TABLETS */
 @media (max-width: 768px) {
 	.etiqueta-container {
@@ -626,6 +671,11 @@ body {
 	}
 	.carrusel-btn.prev { left: 8px; }
 	.carrusel-btn.next { right: 8px; }
+	
+	/* Mostrar indicador de deslizamiento solo en tablets */
+	.swipe-indicator {
+		display: flex;
+	}
 	.como-comprar-card { max-width: 90%; }
 	.instagram-section { padding: 30px 15px; gap: 15px; flex-direction: column; }
 	.logo-instagram { height: 55px; }
@@ -725,6 +775,15 @@ body {
 	}
 	.carrusel-btn.prev { left: 3px; }
 	.carrusel-btn.next { right: 3px; }
+	
+	/* Mostrar indicador de deslizamiento en móviles */
+	.swipe-indicator {
+		display: flex;
+	}
+	
+	.swipe-text {
+		font-size: 10px;
+	}
 	
 	.logo-container { height: 100px; margin-bottom: 15px; }
 	.brand-logo { height: 80px; }

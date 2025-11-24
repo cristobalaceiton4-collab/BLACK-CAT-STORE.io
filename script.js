@@ -29,6 +29,38 @@ prevBtn.addEventListener('click', () => {
 
 window.addEventListener('resize', updateCarrusel);
 
+// Funcionalidad táctil para móviles - Polerones
+let touchStartX = 0;
+let touchEndX = 0;
+
+carrusel.addEventListener('touchstart', (e) => {
+	touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+carrusel.addEventListener('touchend', (e) => {
+	touchEndX = e.changedTouches[0].screenX;
+	handleSwipe();
+});
+
+function handleSwipe() {
+	const swipeThreshold = 50;
+	if (touchEndX < touchStartX - swipeThreshold) {
+		// Deslizar a la izquierda (siguiente)
+		const totalSlides = carrusel.children.length;
+		if (currentIndex < totalSlides - 1) {
+			currentIndex++;
+			updateCarrusel();
+		}
+	}
+	if (touchEndX > touchStartX + swipeThreshold) {
+		// Deslizar a la derecha (anterior)
+		if (currentIndex > 0) {
+			currentIndex--;
+			updateCarrusel();
+		}
+	}
+}
+
 // Carrusel de Pantalones
 const carruselPantalones = document.getElementById('carruselPantalones');
 const logoSliderPantalones = document.getElementById('logoSliderPantalones');
@@ -59,6 +91,36 @@ prevBtnPantalones.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateCarruselPantalones);
+
+// Funcionalidad táctil - Pantalones
+let touchStartXPantalones = 0;
+let touchEndXPantalones = 0;
+
+carruselPantalones.addEventListener('touchstart', (e) => {
+	touchStartXPantalones = e.changedTouches[0].screenX;
+}, { passive: true });
+
+carruselPantalones.addEventListener('touchend', (e) => {
+	touchEndXPantalones = e.changedTouches[0].screenX;
+	handleSwipePantalones();
+});
+
+function handleSwipePantalones() {
+	const swipeThreshold = 50;
+	if (touchEndXPantalones < touchStartXPantalones - swipeThreshold) {
+		const totalSlides = carruselPantalones.children.length;
+		if (currentIndexPantalones < totalSlides - 1) {
+			currentIndexPantalones++;
+			updateCarruselPantalones();
+		}
+	}
+	if (touchEndXPantalones > touchStartXPantalones + swipeThreshold) {
+		if (currentIndexPantalones > 0) {
+			currentIndexPantalones--;
+			updateCarruselPantalones();
+		}
+	}
+}
 
 // Carrusel de Shorts
 const carruselShorts = document.getElementById('carruselShorts');
@@ -91,6 +153,36 @@ prevBtnShorts.addEventListener('click', () => {
 
 window.addEventListener('resize', updateCarruselShorts);
 
+// Funcionalidad táctil - Shorts
+let touchStartXShorts = 0;
+let touchEndXShorts = 0;
+
+carruselShorts.addEventListener('touchstart', (e) => {
+	touchStartXShorts = e.changedTouches[0].screenX;
+}, { passive: true });
+
+carruselShorts.addEventListener('touchend', (e) => {
+	touchEndXShorts = e.changedTouches[0].screenX;
+	handleSwipeShorts();
+});
+
+function handleSwipeShorts() {
+	const swipeThreshold = 50;
+	if (touchEndXShorts < touchStartXShorts - swipeThreshold) {
+		const totalSlides = carruselShorts.children.length;
+		if (currentIndexShorts < totalSlides - 1) {
+			currentIndexShorts++;
+			updateCarruselShorts();
+		}
+	}
+	if (touchEndXShorts > touchStartXShorts + swipeThreshold) {
+		if (currentIndexShorts > 0) {
+			currentIndexShorts--;
+			updateCarruselShorts();
+		}
+	}
+}
+
 // Carrusel de Poleras
 const carruselPoleras = document.getElementById('carruselPoleras');
 const logoSliderPoleras = document.getElementById('logoSliderPoleras');
@@ -122,6 +214,36 @@ prevBtnPoleras.addEventListener('click', () => {
 
 window.addEventListener('resize', updateCarruselPoleras);
 
+// Funcionalidad táctil - Poleras
+let touchStartXPoleras = 0;
+let touchEndXPoleras = 0;
+
+carruselPoleras.addEventListener('touchstart', (e) => {
+	touchStartXPoleras = e.changedTouches[0].screenX;
+}, { passive: true });
+
+carruselPoleras.addEventListener('touchend', (e) => {
+	touchEndXPoleras = e.changedTouches[0].screenX;
+	handleSwipePoleras();
+});
+
+function handleSwipePoleras() {
+	const swipeThreshold = 50;
+	if (touchEndXPoleras < touchStartXPoleras - swipeThreshold) {
+		const totalSlides = carruselPoleras.children.length;
+		if (currentIndexPoleras < totalSlides - 1) {
+			currentIndexPoleras++;
+			updateCarruselPoleras();
+		}
+	}
+	if (touchEndXPoleras > touchStartXPoleras + swipeThreshold) {
+		if (currentIndexPoleras > 0) {
+			currentIndexPoleras--;
+			updateCarruselPoleras();
+		}
+	}
+}
+
 // Carrusel de Chaquetas
 const carruselChaquetas = document.getElementById('carruselChaquetas');
 const logoSliderChaquetas = document.getElementById('logoSliderChaquetas');
@@ -152,6 +274,36 @@ prevBtnChaquetas.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateCarruselChaquetas);
+
+// Funcionalidad táctil - Chaquetas
+let touchStartXChaquetas = 0;
+let touchEndXChaquetas = 0;
+
+carruselChaquetas.addEventListener('touchstart', (e) => {
+	touchStartXChaquetas = e.changedTouches[0].screenX;
+}, { passive: true });
+
+carruselChaquetas.addEventListener('touchend', (e) => {
+	touchEndXChaquetas = e.changedTouches[0].screenX;
+	handleSwipeChaquetas();
+});
+
+function handleSwipeChaquetas() {
+	const swipeThreshold = 50;
+	if (touchEndXChaquetas < touchStartXChaquetas - swipeThreshold) {
+		const totalSlides = carruselChaquetas.children.length;
+		if (currentIndexChaquetas < totalSlides - 1) {
+			currentIndexChaquetas++;
+			updateCarruselChaquetas();
+		}
+	}
+	if (touchEndXChaquetas > touchStartXChaquetas + swipeThreshold) {
+		if (currentIndexChaquetas > 0) {
+			currentIndexChaquetas--;
+			updateCarruselChaquetas();
+		}
+	}
+}
 
 // FÍSICA DE CUERDA REALISTA - AJUSTADO PARA RESPONSIVE
 const canvas = document.getElementById('ropeCanvas');
