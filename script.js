@@ -153,22 +153,56 @@ prevBtnChaquetas.addEventListener('click', () => {
 
 window.addEventListener('resize', updateCarruselChaquetas);
 
-// FÍSICA DE CUERDA REALISTA
+// FÍSICA DE CUERDA REALISTA - AJUSTADO PARA RESPONSIVE
 const canvas = document.getElementById('ropeCanvas');
 const ctx = canvas.getContext('2d');
 const etiqueta = document.getElementById('etiqueta');
 const container = document.getElementById('etiquetaContainer');
 
-// Segunda etiqueta
 const canvas2 = document.getElementById('ropeCanvas2');
 const ctx2 = canvas2.getContext('2d');
 const etiqueta2 = document.getElementById('etiqueta2');
 const container2 = document.getElementById('etiquetaContainer2');
 
-canvas.width = 150;
-canvas.height = 250;
-canvas2.width = 180;
-canvas2.height = 280;
+// Función para ajustar tamaño del canvas según pantalla
+function adjustCanvasSize() {
+	const width = window.innerWidth;
+	
+	if (width <= 360) {
+		// Móviles pequeños
+		canvas.width = 95;
+		canvas.height = 180;
+		canvas2.width = 110;
+		canvas2.height = 210;
+	} else if (width <= 480) {
+		// Móviles
+		canvas.width = 110;
+		canvas.height = 200;
+		canvas2.width = 125;
+		canvas2.height = 230;
+	} else if (width <= 768) {
+		// Tablets
+		canvas.width = 130;
+		canvas.height = 230;
+		canvas2.width = 150;
+		canvas2.height = 260;
+	} else {
+		// Desktop
+		canvas.width = 150;
+		canvas.height = 250;
+		canvas2.width = 170;
+		canvas2.height = 280;
+	}
+	
+	// Reiniciar puntos con nuevo tamaño
+	initRopePoints();
+}
+
+// Variables globales para puntos
+let points = [];
+let points2 = [];
+let ropeSegments = 12;
+let segmentLength = 13;
 
 // Función para crear puntos de cuerda
 function createRopePoints(segments, segLength, startX, startY) {
@@ -185,11 +219,19 @@ function createRopePoints(segments, segLength, startX, startY) {
 	return pts;
 }
 
-// Puntos de las cuerdas - empiezan desde Y=0 (debajo de la barra)
-const ropeSegments = 12;
-const segmentLength = 13;
-const points = createRopePoints(ropeSegments, segmentLength, 90, 0);
-const points2 = createRopePoints(14, 13, 100, 0);
+// Inicializar puntos según tamaño de canvas
+function initRopePoints() {
+	const startX1 = canvas.width * 0.6;
+	const startX2 = canvas2.width * 0.59;
+	
+	// Ajustar segmentos según altura del canvas
+	const segments1 = Math.floor(canvas.height / 20);
+	const segments2 = Math.floor(canvas2.height / 20);
+	const segLen = canvas.height / segments1 * 0.65;
+	
+	points = createRopePoints(segments1, segLen, startX1, 0);
+	points2 = createRopePoints(segments2, segLen, startX2, 0);
+}
 
 // Físicas
 const gravity = 0.5;
@@ -216,9 +258,10 @@ function updatePoints(pts, canvasW, canvasH, minY) {
 		p.x += vx + scrollVelX;
 		p.y += vy + gravity + scrollVelY;
 		
-		// Límites - NO tocar arriba
-		if (p.x < 10) { p.x = 10; }
-		if (p.x > canvasW - 10) { p.x = canvasW - 10; }
+		// Límites
+		const margin = canvasW * 0.1;
+		if (p.x < margin) { p.x = margin; }
+		if (p.x > canvasW - margin) { p.x = canvasW - margin; }
 		if (p.y < minY) { p.y = minY; p.oldY = p.y; }
 		if (p.y > canvasH - 50) { p.y = canvasH - 50; }
 	}
@@ -256,6 +299,8 @@ function applyConstraints(pts, segLen) {
 function drawRope(context, pts) {
 	context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 	
+	if (pts.length < 2) return;
+	
 	context.beginPath();
 	context.moveTo(pts[0].x, pts[0].y);
 	
@@ -275,21 +320,27 @@ function drawRope(context, pts) {
 
 // Actualizar posición de las etiquetas
 function updateTags() {
-	const lastPoint = points[points.length - 1];
-	etiqueta.style.left = lastPoint.x + 'px';
-	etiqueta.style.top = lastPoint.y + 'px';
+	if (points.length > 0) {
+		const lastPoint = points[points.length - 1];
+		etiqueta.style.left = lastPoint.x + 'px';
+		etiqueta.style.top = lastPoint.y + 'px';
+	}
 	
-	const lastPoint2 = points2[points2.length - 1];
-	etiqueta2.style.left = lastPoint2.x + 'px';
-	etiqueta2.style.top = lastPoint2.y + 'px';
+	if (points2.length > 0) {
+		const lastPoint2 = points2[points2.length - 1];
+		etiqueta2.style.left = lastPoint2.x + 'px';
+		etiqueta2.style.top = lastPoint2.y + 'px';
+	}
 }
 
 // Loop principal
 function animate() {
-	updatePoints(points, canvas.width, canvas.height, 30);
-	updatePoints(points2, canvas2.width, canvas2.height, 30);
-	applyConstraints(points, segmentLength);
-	applyConstraints(points2, 10);
+	const segLen = points.length > 1 ? canvas.height / points.length * 0.65 : 13;
+	
+	updatePoints(points, canvas.width, canvas.height, 20);
+	updatePoints(points2, canvas2.width, canvas2.height, 20);
+	applyConstraints(points, segLen);
+	applyConstraints(points2, segLen);
 	drawRope(ctx, points);
 	drawRope(ctx2, points2);
 	updateTags();
@@ -336,15 +387,17 @@ document.addEventListener('mousemove', (e) => {
 		const rect = container.getBoundingClientRect();
 		dragPoint.x = e.clientX - rect.left;
 		dragPoint.y = e.clientY - rect.top;
-		dragPoint.x = Math.max(10, Math.min(canvas.width - 10, dragPoint.x));
-		dragPoint.y = Math.max(30, Math.min(canvas.height - 50, dragPoint.y));
+		const margin = canvas.width * 0.1;
+		dragPoint.x = Math.max(margin, Math.min(canvas.width - margin, dragPoint.x));
+		dragPoint.y = Math.max(20, Math.min(canvas.height - 50, dragPoint.y));
 	}
 	if (isDragging2 && dragPoint2) {
 		const rect2 = container2.getBoundingClientRect();
 		dragPoint2.x = e.clientX - rect2.left;
 		dragPoint2.y = e.clientY - rect2.top;
-		dragPoint2.x = Math.max(10, Math.min(canvas2.width - 10, dragPoint2.x));
-		dragPoint2.y = Math.max(30, Math.min(canvas2.height - 50, dragPoint2.y));
+		const margin = canvas2.width * 0.1;
+		dragPoint2.x = Math.max(margin, Math.min(canvas2.width - margin, dragPoint2.x));
+		dragPoint2.y = Math.max(20, Math.min(canvas2.height - 50, dragPoint2.y));
 	}
 });
 
@@ -377,16 +430,18 @@ document.addEventListener('touchmove', (e) => {
 		const touch = e.touches[0];
 		dragPoint.x = touch.clientX - rect.left;
 		dragPoint.y = touch.clientY - rect.top;
-		dragPoint.x = Math.max(10, Math.min(canvas.width - 10, dragPoint.x));
-		dragPoint.y = Math.max(30, Math.min(canvas.height - 50, dragPoint.y));
+		const margin = canvas.width * 0.1;
+		dragPoint.x = Math.max(margin, Math.min(canvas.width - margin, dragPoint.x));
+		dragPoint.y = Math.max(20, Math.min(canvas.height - 50, dragPoint.y));
 	}
 	if (isDragging2 && dragPoint2) {
 		const rect2 = container2.getBoundingClientRect();
 		const touch = e.touches[0];
 		dragPoint2.x = touch.clientX - rect2.left;
 		dragPoint2.y = touch.clientY - rect2.top;
-		dragPoint2.x = Math.max(10, Math.min(canvas2.width - 10, dragPoint2.x));
-		dragPoint2.y = Math.max(30, Math.min(canvas2.height - 50, dragPoint2.y));
+		const margin = canvas2.width * 0.1;
+		dragPoint2.x = Math.max(margin, Math.min(canvas2.width - margin, dragPoint2.x));
+		dragPoint2.y = Math.max(20, Math.min(canvas2.height - 50, dragPoint2.y));
 	}
 });
 
@@ -397,4 +452,11 @@ document.addEventListener('touchend', () => {
 	dragPoint2 = null;
 });
 
+// Resize handler
+window.addEventListener('resize', () => {
+	adjustCanvasSize();
+});
+
+// Inicializar
+adjustCanvasSize();
 animate();
