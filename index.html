@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Tienda de Ropa y Zapatillas - Black Cat Store</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Logo fijo en esquina -->
+<img src="logo black cat store.png" alt="Black Cat Store Logo" class="logo-fijo">
+
+<!-- Etiqueta colgante con física - ENVIOS CHILE -->
+<div class="etiqueta-container-2" id="etiquetaContainer2">
+	<canvas class="etiqueta-canvas-2" id="ropeCanvas2"></canvas>
+	<div class="etiqueta-circulo-2" id="etiqueta2">
+		<div class="etiqueta-agujero-2"></div>
+		<span class="etiqueta-texto-2">Envíos a todo</span>
+		<span class="etiqueta-chile-text">CHILE</span>
+		<div class="etiqueta-bandera">
+			<div class="bandera-chile">
+				<div class="bandera-top">
+					<div class="bandera-azul"><span class="bandera-estrella">★</span></div>
+					<div class="bandera-blanco"></div>
+				</div>
+				<div class="bandera-rojo"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Etiqueta colgante con física - CALIDAD G5 -->
+<div class="etiqueta-container" id="etiquetaContainer">
+	<canvas class="etiqueta-canvas" id="ropeCanvas"></canvas>
+	<div class="etiqueta-circulo" id="etiqueta">
+		<div class="etiqueta-agujero"></div>
+		<span class="etiqueta-texto">Calidad</span>
+		<span class="etiqueta-calidad">G5</span>
+	</div>
+</div>
+
+<nav class="navbar">
+	<div class="nav-container">
+		<!-- Botón Novedades a la izquierda -->
+		<div class="nav-item-left">
+			<button class="nav-button" onclick="window.open('novedades.html', '_blank')">NOVEDADES</button>
+		</div>
+		
+		<!-- Botones centrales con dropdown -->
+		<div class="nav-center">
+			<div class="nav-item">
+				<button class="nav-button">Zapatillas ▼</button>
+				<div class="dropdown">
+					<a href="#supreme">supreme</a>
+					<a href="#retro-4">jordan 4</a>
+					<a href="#air-force-one">air force one</a>
+					<a href="#air-max">air max</a>
+					<a href="#jordan-3">jordan 3</a>
+					<a href="#louis-voutton">Louis voutton</a>
+					<a href="#jordan-1">jordan 1</a>
+					<a href="#adidas">adidas</a>
+					<a href="#amiri">amiri</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<button class="nav-button">Ropa ▼</button>
+				<div class="dropdown">
+					<a href="#polerones">Polerones</a>
+					<a href="#poleras">Poleras</a>
+					<a href="#pantalones">Pantalones</a>
+					<a href="#shorts">Shorts</a>
+					<a href="#chaquetas">Chaquetas</a>
+					<a href="#polerones">Todo</a>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Botón Información a la derecha -->
+		<div class="nav-item-right">
+			<button class="nav-button" onclick="window.open('informacion.html', '_blank')">INFORMACIÓN</button>
+		</div>
+	</div>
+</nav>
+
+<section class="banner"> 
+	<img src="black cat.png" alt="blackcat banner 20% oferta"> 
+</section>
+
+<!-- Sección Cómo Comprar AGRANDADA -->
+<div class="como-comprar-container">
+	<div class="como-comprar-card">
+		<img src="como comprar wait.png" alt="Cómo Comprar en Black Cat Store" class="como-comprar-img">
+		<div class="instagram-section">
+			<img src="logo instagram.png" alt="Instagram" class="logo-instagram">
+			<button class="instagram-btn" onclick="window.open('https://www.instagram.com/blackcatstore_cl/', '_blank')">
+				COMPRAR EN INSTAGRAM
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- POLERONES -->
+<section class="carrusel-container" id="polerones">
+	<div class="logo-container">
+		<div class="logo-slider" id="logoSlider">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+		</div>
+	</div>
+	<button class="carrusel-btn prev" id="prevBtn">❮</button>
+	<div class="carrusel-wrapper">
+		<div class="carrusel-polerones" id="carrusel">
+			<div class="poleron-slide"><img src="synas largos.png" alt="Poleron Synas"></div>
+			<div class="poleron-slide"><img src="esentials polerones.png" alt="Poleron Essentials"></div>
+			<div class="poleron-slide"><img src="corteiz polerones.png" alt="Poleron Corteiz"></div>
+			<div class="poleron-slide"><img src="polerones supreme.png" alt="polerones supreme"></div>
+			<div class="poleron-slide"><img src="polerones nike tech.png" alt="polerones nike tech"></div>
+			<div class="poleron-slide"><img src="polerones trapstar.png" alt="polerones trapstar"></div>
+			<div class="poleron-slide"><img src="synas largos.png" alt="Poleron Synas 2"></div>
+			<div class="poleron-slide"><img src="esentials polerones.png" alt="Poleron Essentials 2"></div>
+			<div class="poleron-slide"><img src="corteiz polerones.png" alt="Poleron Corteiz 2"></div>
+			<div class="poleron-slide"><img src="polerones supreme.png" alt="polerones supreme 2"></div>
+			<div class="poleron-slide"><img src="polerones nike tech.png" alt="polerones nike tech 2"></div>
+			<div class="poleron-slide"><img src="polerones trapstar.png" alt="polerones trapstar 2"></div>
+		</div>
+	</div>
+	<button class="carrusel-btn next" id="nextBtn">❯</button>
+</section>
+
+<!-- PANTALONES -->
+<section class="carrusel-container" id="pantalones">
+	<div class="logo-container">
+		<div class="logo-slider" id="logoSliderPantalones">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+		</div>
+	</div>
+	<button class="carrusel-btn prev" id="prevBtnPantalones">❮</button>
+	<div class="carrusel-wrapper">
+		<div class="carrusel-polerones" id="carruselPantalones">
+			<div class="poleron-slide"><img src="pantalones syna.png" alt="Pantalones Synas"></div>
+			<div class="poleron-slide"><img src="pantalones essentials.png" alt="Pantalones Essentials"></div>
+			<div class="poleron-slide"><img src="pantalones corteiz.png" alt="Pantalones Corteiz"></div>
+			<div class="poleron-slide"><img src="pantalones supreme.png" alt="Pantalones Supreme"></div>
+			<div class="poleron-slide"><img src="pantalones nike tech.png" alt="Pantalones Nike Tech"></div>
+			<div class="poleron-slide"><img src="pantalones trapstar.png" alt="Pantalones Trapstar"></div>
+			<div class="poleron-slide"><img src="pantalones syna.png" alt="Pantalones Synas 2"></div>
+			<div class="poleron-slide"><img src="pantalones essentials.png" alt="Pantalones Essentials 2"></div>
+			<div class="poleron-slide"><img src="pantalones corteiz.png" alt="Pantalones Corteiz 2"></div>
+			<div class="poleron-slide"><img src="pantalones supreme.png" alt="Pantalones Supreme 2"></div>
+			<div class="poleron-slide"><img src="pantalones nike tech.png" alt="Pantalones Nike Tech 2"></div>
+			<div class="poleron-slide"><img src="pantalones trapstar.png" alt="Pantalones Trapstar 2"></div>
+		</div>
+	</div>
+	<button class="carrusel-btn next" id="nextBtnPantalones">❯</button>
+</section>
+
+<!-- SHORTS -->
+<section class="carrusel-container" id="shorts">
+	<div class="logo-container">
+		<div class="logo-slider" id="logoSliderShorts">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+		</div>
+	</div>
+	<button class="carrusel-btn prev" id="prevBtnShorts">❮</button>
+	<div class="carrusel-wrapper">
+		<div class="carrusel-polerones" id="carruselShorts">
+			<div class="poleron-slide"><img src="shorts syna world.png" alt="Shorts Synas"></div>
+			<div class="poleron-slide"><img src="shorts essentials.png" alt="Shorts Essentials"></div>
+			<div class="poleron-slide"><img src="short corteiz.png" alt="Shorts Corteiz"></div>
+			<div class="poleron-slide"><img src="short supreme.png" alt="Shorts Supreme"></div>
+			<div class="poleron-slide"><img src="short nike tech.png" alt="Shorts Nike Tech"></div>
+			<div class="poleron-slide"><img src="short trapstar.png" alt="Shorts Trapstar"></div>
+			<div class="poleron-slide"><img src="shorts syna world.png" alt="Shorts Synas 2"></div>
+			<div class="poleron-slide"><img src="shorts essentials.png" alt="Shorts Essentials 2"></div>
+			<div class="poleron-slide"><img src="short corteiz.png" alt="Shorts Corteiz 2"></div>
+			<div class="poleron-slide"><img src="short supreme.png" alt="Shorts Supreme 2"></div>
+			<div class="poleron-slide"><img src="short nike tech.png" alt="Shorts Nike Tech 2"></div>
+			<div class="poleron-slide"><img src="short trapstar.png" alt="Shorts Trapstar 2"></div>
+		</div>
+	</div>
+	<button class="carrusel-btn next" id="nextBtnShorts">❯</button>
+</section>
+
+<!-- POLERAS -->
+<section class="carrusel-container" id="poleras">
+	<div class="logo-container">
+		<div class="logo-slider" id="logoSliderPoleras">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
+			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
+			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
+		</div>
+	</div>
+	<button class="carrusel-btn prev" id="prevBtnPoleras">❮</button>
+	<div class="carrusel-wrapper">
+		<div class="carrusel-polerones" id="carruselPoleras">
+			<div class="poleron-slide"><img src="poleras syna.png" alt="Poleras Synas"></div>
+			<div class="poleron-slide"><img src="poleras essentials.png" alt="Poleras Essentials"></div>
+			<div class="poleron-slide"><img src="poleras corteiz.png" alt="Poleras Corteiz"></div>
+			<div class="poleron-slide"><img src="poleras supreme.png" alt="Poleras Supreme"></div>
+			<div class="poleron-slide"><img src="poleras jordan.png" alt="Poleras Jordan"></div>
+			<div class="poleron-slide"><img src="poleras trapstar.png" alt="Poleras Trapstar"></div>
+			<div class="poleron-slide"><img src="poleras syna.png" alt="Poleras Synas 2"></div>
+			<div class="poleron-slide"><img src="poleras essentials.png" alt="Poleras Essentials 2"></div>
+			<div class="poleron-slide"><img src="poleras corteiz.png" alt="Poleras Corteiz 2"></div>
+			<div class="poleron-slide"><img src="poleras supreme.png" alt="Poleras Supreme 2"></div>
+			<div class="poleron-slide"><img src="poleras jordan.png" alt="Poleras Jordan 2"></div>
+			<div class="poleron-slide"><img src="poleras trapstar.png" alt="Poleras Trapstar 2"></div>
+		</div>
+	</div>
+	<button class="carrusel-btn next" id="nextBtnPoleras">❯</button>
+</section>
+
+<!-- CHAQUETAS -->
+<section class="carrusel-container" id="chaquetas">
+	<div class="logo-container">
+		<div class="logo-slider" id="logoSliderChaquetas">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme x north face.png" alt="Supreme x North Face" class="brand-logo">
+			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
+			<img src="logo trapstar.png" alt="Trapstar" class="brand-logo">
+			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
+			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
+			<img src="logo supreme x north face.png" alt="Supreme x North Face" class="brand-logo">
+			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
+			<img src="logo trapstar.png" alt="Trapstar" class="brand-logo">
+		</div>
+	</div>
+	<button class="carrusel-btn prev" id="prevBtnChaquetas">❮</button>
+	<div class="carrusel-wrapper">
+		<div class="carrusel-polerones" id="carruselChaquetas">
+			<div class="poleron-slide"><img src="chaquetas syna.png" alt="Chaquetas Synas"></div>
+			<div class="poleron-slide"><img src="chaquetas corteiz.png" alt="Chaquetas Corteiz"></div>
+			<div class="poleron-slide"><img src="chaquetas supreme x north face.png" alt="Chaquetas Supreme x North Face"></div>
+			<div class="poleron-slide"><img src="chaquetas jordan.png" alt="Chaquetas Jordan"></div>
+			<div class="poleron-slide"><img src="chaquetas trapstar.png" alt="Chaquetas Trapstar"></div>
+			<div class="poleron-slide"><img src="chaquetas syna.png" alt="Chaquetas Synas 2"></div>
+			<div class="poleron-slide"><img src="chaquetas corteiz.png" alt="Chaquetas Corteiz 2"></div>
+			<div class="poleron-slide"><img src="chaquetas supreme x north face.png" alt="Chaquetas Supreme x North Face 2"></div>
+			<div class="poleron-slide"><img src="chaquetas jordan.png" alt="Chaquetas Jordan 2"></div>
+			<div class="poleron-slide"><img src="chaquetas trapstar.png" alt="Chaquetas Trapstar 2"></div>
+		</div>
+	</div>
+	<button class="carrusel-btn next" id="nextBtnChaquetas">❯</button>
+</section>
+
+<!-- ZAPATILLAS -->
+<section class="zapatillas-section" id="zapatillas">
+	<div class="zapatilla-item"><img id="supreme" src="zapatillas supreme.png" alt="Zapatillas Supreme"></div>
+	<div class="zapatilla-item"><img id="retro-4" src="zapatillas nike 1.png" alt="Zapatillas Nike 1"></div>
+	<div class="zapatilla-item"><img src="zapatillas nike 2.png" alt="Zapatillas Nike 2"></div>
+	<div class="zapatilla-item"><img src="zapatillas nike 3 .png" alt="Zapatillas Nike 3"></div>
+	<div class="zapatilla-item"><img id="air-force-one" src="air force one (1).png" alt="Zapatillas air force one 1"></div>
+	<div class="zapatilla-item"><img src="air force one (2).png" alt="Zapatillas air force one 2"></div>
+	<div class="zapatilla-item"><img src="air force one (3).png" alt="Zapatillas air force one 3"></div>
+	<div class="zapatilla-item"><img src="air force one (4).png" alt="Zapatillas air force one 4"></div>
+	<div class="zapatilla-item"><img src="air force one (5).png" alt="Zapatillas air force one 5"></div>
+	<div class="zapatilla-item"><img id="air-max" src="air max (1).png" alt="air max 1"></div>
+	<div class="zapatilla-item"><img src="air max (2).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img src="air max (3).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img id="jordan-3" src="jordan 3 (1).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img src="jordan 3 (2).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img src="jordan 3 (3).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img id="louis-voutton" src="louis voutton (1).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img src="louis voutton (2).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img id="shocks-tn" src="shocks tl.png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img id="adidas" src="adidas.png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img id="amiri" src="amiri (1).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img src="amiri (2).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img id="jordan-1" src="jordan 1 (1).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img src="jordan 1 (2).png" alt="air max 2"></div>
+	<div class="zapatilla-item"><img src="jordan 1 (3).png" alt="air max 2"></div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
