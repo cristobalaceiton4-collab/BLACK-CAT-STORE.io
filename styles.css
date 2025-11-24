@@ -15,34 +15,34 @@ body {
 /* Etiqueta colgante con física */
 .etiqueta-container {
 	position: fixed;
-	top: 60px;
-	right: 50px;
+	top: 55px;
+	right: 35px;
 	z-index: 999;
 }
 
 .etiqueta-container-2 {
 	position: fixed;
-	top: 60px;
-	right: 220px;
+	top: 55px;
+	right: 160px;
 	z-index: 999;
 }
 
 .etiqueta-canvas {
-	width: 180px;
-	height: 300px;
+	width: 150px;
+	height: 250px;
 	pointer-events: none;
 }
 
 .etiqueta-canvas-2 {
-	width: 200px;
-	height: 330px;
+	width: 170px;
+	height: 280px;
 	pointer-events: none;
 }
 
 .etiqueta-circulo {
 	position: absolute;
-	width: 90px;
-	height: 90px;
+	width: 75px;
+	height: 75px;
 	background: linear-gradient(145deg, #1a1a1a, #333);
 	border-radius: 50%;
 	display: flex;
@@ -59,8 +59,8 @@ body {
 
 .etiqueta-circulo-2 {
 	position: absolute;
-	width: 110px;
-	height: 110px;
+	width: 95px;
+	height: 95px;
 	background: linear-gradient(145deg, #1a1a1a, #333);
 	border-radius: 50%;
 	display: flex;
@@ -73,7 +73,7 @@ body {
 	pointer-events: all;
 	user-select: none;
 	transform: translate(-50%, -50%);
-	padding: 8px;
+	padding: 6px;
 }
 
 .etiqueta-circulo:active, .etiqueta-circulo-2:active {
@@ -82,7 +82,7 @@ body {
 
 .etiqueta-texto {
 	color: #fff;
-	font-size: 11px;
+	font-size: 10px;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
@@ -91,7 +91,7 @@ body {
 
 .etiqueta-texto-2 {
 	color: #fff;
-	font-size: 10px;
+	font-size: 9px;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.3px;
@@ -102,7 +102,7 @@ body {
 
 .etiqueta-calidad {
 	color: #ffd700;
-	font-size: 22px;
+	font-size: 19px;
 	font-weight: 800;
 	font-family: Arial, sans-serif;
 	text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
@@ -110,16 +110,16 @@ body {
 
 .etiqueta-chile-text {
 	color: #ffd700;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 800;
 	font-family: Arial, sans-serif;
 	text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .etiqueta-bandera {
-	width: 36px;
-	height: 24px;
-	margin-top: 4px;
+	width: 32px;
+	height: 21px;
+	margin-top: 3px;
 	border-radius: 3px;
 	overflow: hidden;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.3);
@@ -148,7 +148,7 @@ body {
 
 .bandera-estrella {
 	color: white;
-	font-size: 12px;
+	font-size: 10px;
 	line-height: 1;
 }
 
@@ -164,18 +164,8 @@ body {
 }
 
 .etiqueta-agujero {
-	width: 10px;
-	height: 10px;
-	background: #1a1a1a;
-	border-radius: 50%;
-	position: absolute;
-	top: 10px;
-	border: 1px solid #555;
-}
-
-.etiqueta-agujero-2 {
-	width: 10px;
-	height: 10px;
+	width: 8px;
+	height: 8px;
 	background: #1a1a1a;
 	border-radius: 50%;
 	position: absolute;
@@ -183,94 +173,14 @@ body {
 	border: 1px solid #555;
 }
 
-@media (max-width: 768px) {
-	.etiqueta-container {
-		right: 40px;
-		top: 56px;
-	}
-	.etiqueta-container-2 {
-		right: 180px;
-		top: 56px;
-	}
-	.etiqueta-canvas {
-		height: 280px;
-	}
-	.etiqueta-canvas-2 {
-		height: 310px;
-	}
-	.etiqueta-circulo {
-		width: 70px;
-		height: 70px;
-	}
-	.etiqueta-circulo-2 {
-		width: 85px;
-		height: 85px;
-	}
-	.etiqueta-calidad {
-		font-size: 18px;
-	}
-	.etiqueta-texto {
-		font-size: 9px;
-	}
-	.etiqueta-texto-2 {
-		font-size: 8px;
-	}
-	.etiqueta-chile-text {
-		font-size: 11px;
-	}
-	.etiqueta-bandera {
-		width: 28px;
-		height: 18px;
-	}
-	.bandera-estrella {
-		font-size: 9px;
-	}
-}
-
-@media (max-width: 480px) {
-	.etiqueta-container {
-		right: 15px;
-		top: 53px;
-	}
-	.etiqueta-container-2 {
-		right: 110px;
-		top: 53px;
-	}
-	.etiqueta-canvas {
-		width: 140px;
-		height: 260px;
-	}
-	.etiqueta-canvas-2 {
-		width: 150px;
-		height: 290px;
-	}
-	.etiqueta-circulo {
-		width: 55px;
-		height: 55px;
-	}
-	.etiqueta-circulo-2 {
-		width: 65px;
-		height: 65px;
-	}
-	.etiqueta-calidad {
-		font-size: 14px;
-	}
-	.etiqueta-texto {
-		font-size: 7px;
-	}
-	.etiqueta-texto-2 {
-		font-size: 6px;
-	}
-	.etiqueta-chile-text {
-		font-size: 9px;
-	}
-	.etiqueta-bandera {
-		width: 22px;
-		height: 14px;
-	}
-	.bandera-estrella {
-		font-size: 7px;
-	}
+.etiqueta-agujero-2 {
+	width: 9px;
+	height: 9px;
+	background: #1a1a1a;
+	border-radius: 50%;
+	position: absolute;
+	top: 7px;
+	border: 1px solid #555;
 }
 
 /* Logo fijo en esquina */
@@ -465,15 +375,15 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 80px 20px;
+	padding: 60px 20px;
 	max-width: 1800px;
 	margin: 0 auto;
 }
 
 .como-comprar-card {
 	position: relative;
-	width: 800px
-	max-width: 1000px;
+	width: 100%;
+	max-width: 800px;
 	background: white;
 	border-radius: 25px;
 	box-shadow: 0 12px 50px rgba(0,0,0,0.2);
@@ -643,7 +553,52 @@ body {
 .carrusel-btn.prev { left: 15px; }
 .carrusel-btn.next { right: 15px; }
 
+/* TABLETS */
 @media (max-width: 768px) {
+	.etiqueta-container {
+		right: 25px;
+		top: 53px;
+	}
+	.etiqueta-container-2 {
+		right: 130px;
+		top: 53px;
+	}
+	.etiqueta-canvas {
+		width: 130px;
+		height: 230px;
+	}
+	.etiqueta-canvas-2 {
+		width: 150px;
+		height: 260px;
+	}
+	.etiqueta-circulo {
+		width: 65px;
+		height: 65px;
+	}
+	.etiqueta-circulo-2 {
+		width: 80px;
+		height: 80px;
+	}
+	.etiqueta-calidad {
+		font-size: 16px;
+	}
+	.etiqueta-texto {
+		font-size: 8px;
+	}
+	.etiqueta-texto-2 {
+		font-size: 7px;
+	}
+	.etiqueta-chile-text {
+		font-size: 10px;
+	}
+	.etiqueta-bandera {
+		width: 26px;
+		height: 17px;
+	}
+	.bandera-estrella {
+		font-size: 8px;
+	}
+	
 	.logo-fijo {
 		width: 80px;
 		top: 70px;
@@ -654,29 +609,164 @@ body {
 	.nav-button { padding: 12px 20px; font-size: 12px; }
 	.destacados { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; width: 100%; }
 	.mascomprado { margin: 20px auto; }
-	.carrusel-container { width: 90%; padding: 0 60px; }
-	.carrusel-btn { width: 50px; height: 50px; font-size: 24px; }
-	.como-comprar-card { max-width: 95%; }
-	.instagram-section { padding: 30px; gap: 20px; }
-	.instagram-btn { padding: 15px 40px; font-size: 18px; }
+	.carrusel-container { width: 95%; padding: 0 50px; }
+	.carrusel-btn { width: 45px; height: 45px; font-size: 20px; padding: 10px; }
+	.carrusel-btn.prev { left: 8px; }
+	.carrusel-btn.next { right: 8px; }
+	.como-comprar-card { max-width: 90%; }
+	.instagram-section { padding: 30px 15px; gap: 15px; flex-direction: column; }
+	.logo-instagram { height: 55px; }
+	.instagram-btn { padding: 15px 40px; font-size: 16px; }
+	.logo-container { height: 140px; margin-bottom: 20px; }
+	.brand-logo { height: 110px; }
 }
 
+/* MÓVILES */
 @media (max-width: 480px) {
+	.etiqueta-container {
+		right: 12px;
+		top: 51px;
+	}
+	.etiqueta-container-2 {
+		right: 85px;
+		top: 51px;
+	}
+	.etiqueta-canvas {
+		width: 110px;
+		height: 200px;
+	}
+	.etiqueta-canvas-2 {
+		width: 125px;
+		height: 230px;
+	}
+	.etiqueta-circulo {
+		width: 50px;
+		height: 50px;
+	}
+	.etiqueta-circulo-2 {
+		width: 62px;
+		height: 62px;
+		padding: 4px;
+	}
+	.etiqueta-calidad {
+		font-size: 13px;
+	}
+	.etiqueta-texto {
+		font-size: 6px;
+	}
+	.etiqueta-texto-2 {
+		font-size: 5.5px;
+	}
+	.etiqueta-chile-text {
+		font-size: 8px;
+	}
+	.etiqueta-bandera {
+		width: 20px;
+		height: 13px;
+		margin-top: 2px;
+	}
+	.bandera-estrella {
+		font-size: 6px;
+	}
+	.etiqueta-agujero {
+		width: 6px;
+		height: 6px;
+		top: 6px;
+	}
+	.etiqueta-agujero-2 {
+		width: 7px;
+		height: 7px;
+		top: 5px;
+	}
+	
 	.logo-fijo {
 		width: 60px;
-		top: 60px;
+		top: 58px;
 		left: 8px;
 		opacity: 0.6;
 	}
 	.banner { margin-top: 50px; }
-	.nav-container { padding: 0 10px; }
-	.nav-button { padding: 12px 12px; font-size: 10px; }
+	.nav-container { padding: 0 8px; }
+	.nav-button { padding: 10px 8px; font-size: 9px; letter-spacing: 0.5px; }
+	.dropdown { min-width: 140px; font-size: 12px; }
+	.dropdown a { padding: 10px 12px; }
 	.destacados { grid-template-columns: 1fr; gap: 15px; padding: 15px; }
-	.carrusel-container { width: 100%; padding: 0 50px; margin: 40px 0; }
-	.carrusel-btn { width: 40px; height: 40px; font-size: 20px; }
-	.carrusel-btn.prev { left: 5px; }
-	.carrusel-btn.next { right: 5px; }
-	.instagram-section { flex-direction: column; padding: 20px; gap: 15px; }
-	.logo-instagram { height: 50px; }
-	.instagram-btn { padding: 12px 30px; font-size: 16px; }
+	
+	.como-comprar-container { padding: 30px 10px; }
+	.como-comprar-card { max-width: 95%; border-radius: 15px; }
+	.instagram-section { flex-direction: column; padding: 20px 10px; gap: 12px; }
+	.logo-instagram { height: 45px; }
+	.instagram-btn { 
+		padding: 12px 25px; 
+		font-size: 13px; 
+		width: 100%;
+		max-width: 280px;
+	}
+	
+	.carrusel-container { width: 100%; padding: 0 35px; margin: 30px 0; }
+	.carrusel-btn { 
+		width: 35px; 
+		height: 35px; 
+		font-size: 16px; 
+		padding: 5px;
+	}
+	.carrusel-btn.prev { left: 3px; }
+	.carrusel-btn.next { right: 3px; }
+	
+	.logo-container { height: 100px; margin-bottom: 15px; }
+	.brand-logo { height: 80px; }
+	
+	.zapatillas-section { width: 95%; margin: 30px auto; padding: 0 10px; }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 360px) {
+	.etiqueta-container {
+		right: 8px;
+		top: 50px;
+	}
+	.etiqueta-container-2 {
+		right: 70px;
+		top: 50px;
+	}
+	.etiqueta-canvas {
+		width: 95px;
+		height: 180px;
+	}
+	.etiqueta-canvas-2 {
+		width: 110px;
+		height: 210px;
+	}
+	.etiqueta-circulo {
+		width: 45px;
+		height: 45px;
+	}
+	.etiqueta-circulo-2 {
+		width: 55px;
+		height: 55px;
+		padding: 3px;
+	}
+	.etiqueta-calidad {
+		font-size: 11px;
+	}
+	.etiqueta-texto {
+		font-size: 5px;
+	}
+	.etiqueta-texto-2 {
+		font-size: 5px;
+	}
+	.etiqueta-chile-text {
+		font-size: 7px;
+	}
+	.etiqueta-bandera {
+		width: 18px;
+		height: 12px;
+	}
+	.bandera-estrella {
+		font-size: 5px;
+	}
+	
+	.nav-button { padding: 10px 6px; font-size: 8px; }
+	.logo-fijo { width: 50px; top: 56px; }
+	.instagram-btn { font-size: 12px; padding: 10px 20px; }
 }
