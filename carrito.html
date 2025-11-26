@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Black Cat Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-contenido">
+            <div class="dropdown-item">
+                <a href="index.html" class="main-link" style="cursor: pointer;">← Volver a la Tienda</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="carrito-container">
+        
+        <div id="carrito-vacio" class="carrito-vacio" style="display: none;">
+            <h2>Tu carrito está vacío</h2>
+            <p>Agrega productos para comenzar tu compra</p>
+            <a href="index.html" class="btn-volver">Ver Productos</a>
+        </div>
+
+        <div id="carrito-lleno" style="display: none;">
+            <h1 style="text-align: center; margin-bottom: 50px; font-size: 3em;">MI CARRITO</h1>
+            
+            <div class="carrito-items" id="carrito-items"></div>
+            
+            <div class="carrito-resumen">
+                <h2>Total</h2>
+                <div class="total" id="total">$0</div>
+                <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

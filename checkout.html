@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Black Cat Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-contenido">
+            <div class="dropdown-item">
+                <a href="carrito.html" class="main-link" style="cursor: pointer;">← Volver al Carrito</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <h1>Finalizar Compra</h1>
+        
+        <div class="checkout-content">
+            <!-- Resumen del pedido -->
+            <div class="resumen-pedido">
+                <h2>Resumen del Pedido</h2>
+                <div id="resumen-items"></div>
+                <div class="resumen-total">
+                    <span>Total:</span>
+                    <span id="resumen-total">$0</span>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="formulario-checkout">
+                <h2>Datos de Envío</h2>
+                <form id="form-checkout" onsubmit="enviarPedido(event)">
+                    <div class="form-group">
+                        <label>Nombre Completo *</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Teléfono *</label>
+                        <input type="tel" name="telefono" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Dirección *</label>
+                        <input type="text" name="direccion" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Ciudad *</label>
+                        <input type="text" name="ciudad" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Región *</label>
+                        <select name="region" required>
+                            <option value="">Selecciona una región</option>
+                            <option value="Arica y Parinacota">Arica y Parinacota</option>
+                            <option value="Tarapacá">Tarapacá</option>
+                            <option value="Antofagasta">Antofagasta</option>
+                            <option value="Atacama">Atacama</option>
+                            <option value="Coquimbo">Coquimbo</option>
+                            <option value="Valparaíso">Valparaíso</option>
+                            <option value="Metropolitana">Metropolitana</option>
+                            <option value="O'Higgins">O'Higgins</option>
+                            <option value="Maule">Maule</option>
+                            <option value="Ñuble">Ñuble</option>
+                            <option value="Biobío">Biobío</option>
+                            <option value="Araucanía">Araucanía</option>
+                            <option value="Los Ríos">Los Ríos</option>
+                            <option value="Los Lagos">Los Lagos</option>
+                            <option value="Aysén">Aysén</option>
+                            <option value="Magallanes">Magallanes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Comentarios adicionales</label>
+                        <textarea name="comentarios" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-finalizar">Enviar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+
+</body>
+</html>

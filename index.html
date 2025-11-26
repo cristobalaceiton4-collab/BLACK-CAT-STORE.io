@@ -1,353 +1,869 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-	<meta name="viewport" content="width=device-width" />
-	<title>Tienda de Ropa y Zapatillas - Black Cat Store</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Cat Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Logo fijo en esquina -->
-<img src="logo black cat store.png" alt="Black Cat Store Logo" class="logo-fijo">
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="nav-bar">
+        <div class="nav-contenido">
+            
+            <div class="dropdown-item">
+                <div class="main-link">Ropa</div>
+                <div class="dropdown-content">
+                    <a href="#">Camisetas</a>
+                    <a href="#">Pantalones</a>
+                    <a href="#">Chaquetas</a>
+                </div>
+            </div>
 
-<nav class="navbar">
-	<div class="nav-container">
-		<!-- Botón Novedades a la izquierda -->
-		<div class="nav-item-left">
-			<button class="nav-button" onclick="window.open('novedades.html', '_blank')">NOVEDADES</button>
-		</div>
-		
-		<!-- Botones centrales con dropdown -->
-		<div class="nav-center">
-			<div class="nav-item">
-				<button class="nav-button">Zapatillas ▼</button>
-				<div class="dropdown">
-					<a href="#supreme">supreme</a>
-					<a href="#retro-4">jordan 4</a>
-					<a href="#air-force-one">air force one</a>
-					<a href="#air-max">air max</a>
-					<a href="#jordan-3">jordan 3</a>
-					<a href="#louis-voutton">Louis voutton</a>
-					<a href="#jordan-1">jordan 1</a>
-					<a href="#adidas">adidas</a>
-					<a href="#amiri">amiri</a>
-				</div>
-			</div>
-			<div class="nav-item">
-				<button class="nav-button">Ropa ▼</button>
-				<div class="dropdown">
-					<a href="#polerones">Polerones</a>
-					<a href="#poleras">Poleras</a>
-					<a href="#pantalones">Pantalones</a>
-					<a href="#shorts">Shorts</a>
-					<a href="#chaquetas">Chaquetas</a>
-					<a href="#polerones">Todo</a>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Botón Información a la derecha -->
-		<div class="nav-item-right">
-			<button class="nav-button" onclick="window.open('informacion.html', '_blank')">INFORMACIÓN</button>
-		</div>
-	</div>
-</nav>
+            <div class="dropdown-item">
+                <div class="main-link">Zapatillas</div>
+                <div class="dropdown-content">
+                    <a href="#">Running</a>
+                    <a href="#">Casual</a>
+                    <a href="#">Baloncesto</a>
+                </div>
+            </div>
+            
+            <div class="dropdown-item">
+                <div class="main-link">Accesorios</div>
+                <div class="dropdown-content">
+                    <a href="#">Gorras</a>
+                    <a href="#">Mochilas</a>
+                    <a href="#">Calcetines</a>
+                </div>
+            </div>
 
-<section class="banner"> 
-	<img src="black cat.png" alt="blackcat banner 20% oferta"> 
-</section>
+            <!-- ICONO DEL CARRITO -->
+            <div class="carrito-icon" onclick="window.location.href='carrito.html'">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="carrito-count" id="carrito-count">0</span>
+            </div>
 
-<!-- Sección Cómo Comprar -->
-<div class="como-comprar-container">
-	<div class="como-comprar-card">
-		<img src="como comprar wait.png" alt="Cómo Comprar en Black Cat Store" class="como-comprar-img">
-		<div class="instagram-section">
-			<img src="logo instagram.png" alt="Instagram" class="logo-instagram">
-			<button class="instagram-btn" onclick="window.open('https://www.instagram.com/blackcatstore_cl/', '_blank')">
-				COMPRAR EN INSTAGRAM
-			</button>
-		</div>
-	</div>
+        </div>
+    </nav>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="banner-inicio">
+        <img src="black cat.png" alt="Black Cat Store Banner">
+    </div>
+
+    <!-- ============================================
+         SECCIÓN: DESTACADOS
+         ============================================ -->
+    <div class="titulo-seccion">
+        <h1>DESTACADOS</h1>
+    </div>
+
+    <div class="contenedor-destacados">
+        
+        <div class="card-destacados">
+            <div class="card-imagen">
+                <img src="poleron syna world negro full.webp" alt="Polerón Syna World Negro">
+            </div>
+            <div class="card-info">
+                <h3>Polerón Syna World</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>
+            </div>
+        </div>
+        
+        <div class="card-destacados">
+            <div class="card-imagen">
+                <img src="poleron sp5der negro amarillo.jpg" alt="Polerón Sp5der Negro y Amarillo">
+            </div>
+            <div class="card-info">
+                <h3>Polerón Sp5der</h3>
+                <p class="precio">$54.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(2)">Agregar al Carrito</button>
+            </div>
+        </div>
+        
+        <div class="card-destacados">
+            <div class="card-imagen">
+                <img src="poleron syna world negro verde.webp" alt="Polerón Syna World Negro y Verde">
+            </div>
+            <div class="card-info">
+                <h3>Polerón Syna World V</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(3)">Agregar al Carrito</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- ============================================
+         SECCIÓN: TODOS LOS PRODUCTOS CON FILTROS
+         ============================================ -->
+    <div class="titulo-seccion">
+        <h1>TODOS LOS PRODUCTOS</h1>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filtros-container">
+        
+        <!-- Buscador -->
+        <div class="filtro-buscador">
+            <input type="text" 
+                   id="buscador" 
+                   placeholder="🔍 Buscar productos..." 
+                   onkeyup="filtrarProductos()">
+        </div>
+
+        <!-- Filtros por marca, tipo y precio -->
+        <div class="filtros-grupo">
+            <select id="filtro-marca" onchange="filtrarProductos()">
+                <option value="">Todas las marcas</option>
+                <option value="Syna World">Syna World</option>
+                <option value="Sp5der">Sp5der</option>
+                <option value="Nike">Nike</option>
+                <option value="Corteiz">Corteiz</option>
+                <option value="Trapstar">Trapstar</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Stussy">Stussy</option>
+                <option value="Carhartt">Carhartt</option>
+                <option value="Vans">Vans</option>
+                <option value="Converse">Converse</option>
+                <option value="Demin Tears">Demin Tears</option>
+            </select>
+
+            <select id="filtro-tipo" onchange="filtrarProductos()">
+                <option value="">Todos los tipos</option>
+                <option value="Polerón">Polerón</option>
+                <option value="Polera">Polera</option>
+                <option value="Short">Short</option>
+                <option value="Zapatillas">Zapatillas</option>
+                <option value="Pantalón">Pantalón</option>
+                <option value="Chaqueta">Chaqueta</option>
+            </select>
+
+            <select id="filtro-precio" onchange="filtrarProductos()">
+                <option value="">Todos los precios</option>
+                <option value="0-50000">Menos de $50.000</option>
+                <option value="50000-70000">$50.000 - $70.000</option>
+                <option value="70000-999999">Más de $70.000</option>
+            </select>
+
+            <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar Filtros</button>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR DE TODOS LOS PRODUCTOS -->
+    <div class="contenedor-productos" id="contenedor-productos">
+        
+        <!-- PRODUCTO 1 -->
+        <div class="card-producto" 
+             data-id="1" 
+             data-marca="Syna World" 
+             data-precio="49990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Syna World Negro">
+            <div class="card-imagen">
+                <img src="poleron syna world negro full.webp" alt="Polerón Syna World Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Syna World</span>
+                <h3>Polerón Syna World Negro</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 2 -->
+        <div class="card-producto" 
+             data-id="2" 
+             data-marca="Sp5der" 
+             data-precio="54990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Sp5der Negro y Amarillo">
+            <div class="card-imagen">
+                <img src="poleron sp5der negro amarillo.jpg" alt="Polerón Sp5der">
+            </div>
+            <div class="card-info">
+                <span class="marca">Sp5der</span>
+                <h3>Polerón Sp5der Negro y Amarillo</h3>
+                <p class="precio">$54.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(2)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 3 -->
+        <div class="card-producto" 
+             data-id="3" 
+             data-marca="Syna World" 
+             data-precio="49990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Syna World Verde">
+            <div class="card-imagen">
+                <img src="poleron syna world negro verde.webp" alt="Polerón Syna World Verde">
+            </div>
+            <div class="card-info">
+                <span class="marca">Syna World</span>
+                <h3>Polerón Syna World Verde</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(3)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 4 -->
+        <div class="card-producto" 
+             data-id="4" 
+             data-marca="Nike" 
+             data-precio="79990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Fleece Azul">
+            <div class="card-imagen">
+                <img src="nike tech azul.webp" alt="Nike Tech Fleece">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Fleece Azul</h3>
+                <p class="precio">$79.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(4)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 5 -->
+        <div class="card-producto" 
+             data-id="5" 
+             data-marca="Corteiz" 
+             data-precio="65990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Corteiz Negro Estrellas">
+            <div class="card-imagen">
+                <img src="corteiz negro estrellas.png" alt="Corteiz Estrellas">
+            </div>
+            <div class="card-info">
+                <span class="marca">Corteiz</span>
+                <h3>Polerón Corteiz Negro Estrellas</h3>
+                <p class="precio">$65.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(5)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 6 -->
+        <div class="card-producto" 
+             data-id="6" 
+             data-marca="Corteiz" 
+             data-precio="65990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Corteiz Blanco">
+            <div class="card-imagen">
+                <img src="corteiz epico blanco.webp" alt="Corteiz Blanco">
+            </div>
+            <div class="card-info">
+                <span class="marca">Corteiz</span>
+                <h3>Polerón Corteiz Blanco</h3>
+                <p class="precio">$65.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(6)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 7 -->
+        <div class="card-producto" 
+             data-id="7" 
+             data-marca="Trapstar" 
+             data-precio="50000"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar Amarillo">
+            <div class="card-imagen">
+                <img src="trapstar linea amarilla.webp" alt="Trapstar Amarillo">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar Amarillo</h3>
+                <p class="precio">$50.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(7)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 8 -->
+        <div class="card-producto" 
+             data-id="8" 
+             data-marca="Trapstar" 
+             data-precio="65000"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar azul rayos">
+            <div class="card-imagen">
+                <img src="trapstar azul rayos.jpeg" alt="Trapstar azul rayos">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar azul rayos</h3>
+                <p class="precio">$65.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(8)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 9 -->
+        <div class="card-producto" 
+             data-id="9" 
+             data-marca="Trapstar" 
+             data-precio="59000"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar shooters Negro">
+            <div class="card-imagen">
+                <img src="poleron shoteers full negro.webp" alt="Trapstar shooters negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar Shooters negro</h3>
+                <p class="precio">$59.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(9)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 10 -->
+        <div class="card-producto" 
+             data-id="10" 
+             data-marca="Nike" 
+             data-precio="85990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Fleece Negro">
+            <div class="card-imagen">
+                <img src="poleron nike tech negro.webp" alt="Polerón Nike Tech Fleece Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Fleece Negro</h3>
+                <p class="precio">$85.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(10)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 11 -->
+        <div class="card-producto" 
+             data-id="11" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Negro Blancas">
+            <div class="card-imagen">
+                <img src="demin tears negro flores blancas.webp" alt="Denim Tears Negro Flores Blancas">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Negro Flores Blancas</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(11)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 12 -->
+        <div class="card-producto" 
+             data-id="12" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Rosa Blanco">
+            <div class="card-imagen">
+                <img src="Poleron demin tears rosa blanco.webp" alt="Polerón Denim Tears Rosa Blanco">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Rosa Blanco</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(12)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 13 -->
+        <div class="card-producto" 
+             data-id="13" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Azul Blanco">
+            <div class="card-imagen">
+                <img src="demin tears azul blanco.avif">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Azul blanco</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(13)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 14 -->
+        <div class="card-producto" 
+             data-id="14" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Gris Blanco">
+            <div class="card-imagen">
+                <img src="poleron demin tears gris blanco.webp" alt="Denim Tears Blanco Flores Negras">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Gris Blanco</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(14)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 15 -->
+        <div class="card-producto" 
+             data-id="15" 
+             data-marca="Demin Tears" 
+             data-precio="78990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Verde Blanco">
+            <div class="card-imagen">
+                <img src="poleron demin tears verde blanco.avif" alt="Denim Tears Verde Oliva">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Verde Blanco</h3>
+                <p class="precio">$78.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(15)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 16 -->
+        <div class="card-producto" 
+             data-id="16" 
+             data-marca="Trapstar" 
+             data-precio="69990"
+             data-tipo="Polerón"
+             data-nombre="Polerón trapstar shooters rojo">
+            <div class="card-imagen">
+                <img src="poleron trapstar shooes rojo.jpeg" alt="Trapstar Shooters Rojo">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón trapstar shooters rojo</h3>
+                <p class="precio">$69.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(16)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 17 -->
+        <div class="card-producto" 
+             data-id="17" 
+             data-marca="Trapstar" 
+             data-precio="72990"
+             data-tipo="Chaqueta"
+             data-nombre="Chaqueta Trapstar Irongate Negro Blanco">
+            <div class="card-imagen">
+                <img src="casaca trapstar irongate blanca.avif" alt="Trapstar Irongate Negro Blanco">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Chaqueta Trapstar Irongate Negro Blanco</h3>
+                <p class="precio">$72.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(17)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 18 -->
+        <div class="card-producto" 
+             data-id="18" 
+             data-marca="Trapstar" 
+             data-precio="68990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar Shooters Gris azul">
+            <div class="card-imagen">
+                <img src="poleron shooters gris azul.jpg" alt="Trapstar Shooters Gris">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar Shooters Gris azul</h3>
+                <p class="precio">$68.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(18)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 19 -->
+        <div class="card-producto" 
+             data-id="19" 
+             data-marca="Nike" 
+             data-precio="84990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Gris">
+            <div class="card-imagen">
+                <img src="poleron nike tech gris.jpg">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Gris</h3>
+                <p class="precio">$84.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(19)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 20 -->
+        <div class="card-producto" 
+             data-id="20" 
+             data-marca="Nike" 
+             data-precio="86990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Verde">
+            <div class="card-imagen">
+                <img src="poleron nike tech verde.webp">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Verde</h3>
+                <p class="precio">$86.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(20)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 21 -->
+        <div class="card-producto" 
+             data-id="21" 
+             data-marca="Nike" 
+             data-precio="87990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Morado">
+            <div class="card-imagen">
+                <img src="poleron nike tech morado.avif">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Morado</h3>
+                <p class="precio">$87.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(21)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 22 -->
+        <div class="card-producto" 
+             data-id="22" 
+             data-marca="Trapstar" 
+             data-precio="62990"
+             data-tipo="Pantalón"
+             data-nombre="Trapstar Pantalón naranjo">
+            <div class="card-imagen">
+                <img src="pantalon trapstar shoters naranjo.webp">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Trapstar Pantalón naranjo</h3>
+                <p class="precio">$62.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(22)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 23 -->
+        <div class="card-producto" 
+             data-id="23" 
+             data-marca="Trapstar" 
+             data-precio="64990"
+             data-tipo="Chaqueta"
+             data-nombre="Chaqueta trapstar celeste hielo">
+            <div class="card-imagen">
+                <img src="casaca trapstar blanca hd 4ka.webp">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Chaqueta trapstar celeste hielo</h3>
+                <p class="precio">$64.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(23)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 24 -->
+        <div class="card-producto" 
+             data-id="24" 
+             data-marca="Nike" 
+             data-precio="69990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón nike Tech Negro">
+            <div class="card-imagen">
+                <img src="pantalon nike tech negro.webp">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Pantalón nike Tech Negro</h3>
+                <p class="precio">$69.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(24)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 25 -->
+        <div class="card-producto" 
+             data-id="25" 
+             data-marca="Nike" 
+             data-precio="68990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón Nike Tech Gris">
+            <div class="card-imagen">
+                <img src="pantalon nike tech gris.avif">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Pantalón Nike Tech Gris</h3>
+                <p class="precio">$68.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(25)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 26 -->
+        <div class="card-producto" 
+             data-id="26" 
+             data-marca="Demin Tears" 
+             data-precio="89990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón buzo demin Tears Negro">
+            <div class="card-imagen">
+                <img src="pantalon buzo demin tears negro.webp" alt="Denim Tears Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Pantalón buzo demin Tears Negro</h3>
+                <p class="precio">$89.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(26)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 27 -->
+        <div class="card-producto" 
+             data-id="27" 
+             data-marca="Demin Tears" 
+             data-precio="89990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón buzo Denim Tears Azul">
+            <div class="card-imagen">
+                <img src="pantalon buzo denim tears azul buzo.webp">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Pantalón buzo Denim Tears Azul</h3>
+                <p class="precio">$89.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(27)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 28 -->
+        <div class="card-producto" 
+             data-id="28" 
+             data-marca="Nike" 
+             data-precio="94990"
+             data-tipo="Zapatillas"
+             data-nombre="Nike Air Force 1 Blanca">
+            <div class="card-imagen">
+                <img src="air force one blanca.jpg" alt="Nike Air Force 1 Blanca">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Nike Air Force 1 Blanca</h3>
+                <p class="precio">$94.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(28)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 29 -->
+        <div class="card-producto" 
+             data-id="29" 
+             data-marca="Adidas" 
+             data-precio="149990"
+             data-tipo="Zapatillas"
+             data-nombre="Adidas Yeezy Boost 350 V2">
+            <div class="card-imagen">
+                <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500" alt="Adidas Yeezy Boost 350 V2">
+            </div>
+            <div class="card-info">
+                <span class="marca">Adidas</span>
+                <h3>Adidas Yeezy Boost 350 V2</h3>
+                <p class="precio">$149.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(29)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 30 -->
+    <div class="card-producto" 
+         data-id="30" 
+         data-marca="Nike" 
+         data-precio="109990"
+         data-tipo="Zapatillas"
+         data-nombre="Nike Air Jordan 1 Mid">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=500" alt="Nike Air Jordan 1 Mid">
+        </div>
+        <div class="card-info">
+            <span class="marca">Nike</span>
+            <h3>Nike Air Jordan 1 Mid</h3>
+            <p class="precio">$109.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(30)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 31 -->
+    <div class="card-producto" 
+         data-id="31" 
+         data-marca="Stussy" 
+         data-precio="55990"
+         data-tipo="Polerón"
+         data-nombre="Stussy Basic Logo Hoodie Gris">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500" alt="Stussy Basic Logo Hoodie Gris">
+        </div>
+        <div class="card-info">
+            <span class="marca">Stussy</span>
+            <h3>Stussy Basic Logo Hoodie Gris</h3>
+            <p class="precio">$55.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(31)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 32 -->
+    <div class="card-producto" 
+         data-id="32" 
+         data-marca="Carhartt" 
+         data-precio="69990"
+         data-tipo="Polerón"
+         data-nombre="Carhartt WIP Chase Hoodie Marrón">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=500" alt="Carhartt WIP Chase Hoodie Marrón">
+        </div>
+        <div class="card-info">
+            <span class="marca">Carhartt</span>
+            <h3>Carhartt WIP Chase Hoodie Marrón</h3>
+            <p class="precio">$69.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(32)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 33 -->
+    <div class="card-producto" 
+         data-id="33" 
+         data-marca="Nike" 
+         data-precio="29990"
+         data-tipo="Polera"
+         data-nombre="Nike Sportswear Club Tee Negro">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="Nike Sportswear Club Tee Negro">
+        </div>
+        <div class="card-info">
+            <span class="marca">Nike</span>
+            <h3>Nike Sportswear Club Tee Negro</h3>
+            <p class="precio">$29.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(33)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 34 -->
+    <div class="card-producto" 
+         data-id="34" 
+         data-marca="Adidas" 
+         data-precio="32990"
+         data-tipo="Polera"
+         data-nombre="Adidas Essential 3-Stripes Tee">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500" alt="Adidas Essential 3-Stripes Tee">
+        </div>
+        <div class="card-info">
+            <span class="marca">Adidas</span>
+            <h3>Adidas Essential 3-Stripes Tee</h3>
+            <p class="precio">$32.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(34)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 35 -->
+    <div class="card-producto" 
+         data-id="35" 
+         data-marca="Nike" 
+         data-precio="84990"
+         data-tipo="Chaqueta"
+         data-nombre="Nike Windrunner Jacket Azul">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500" alt="Nike Windrunner Jacket Azul">
+        </div>
+        <div class="card-info">
+            <span class="marca">Nike</span>
+            <h3>Nike Windrunner Jacket Azul</h3>
+            <p class="precio">$84.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(35)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 36 -->
+    <div class="card-producto" 
+         data-id="36" 
+         data-marca="Adidas" 
+         data-precio="79990"
+         data-tipo="Chaqueta"
+         data-nombre="Adidas SST Track Jacket Negro">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500" alt="Adidas SST Track Jacket Negro">
+        </div>
+        <div class="card-info">
+            <span class="marca">Adidas</span>
+            <h3>Adidas SST Track Jacket Negro</h3>
+            <p class="precio">$79.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(36)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 37 -->
+    <div class="card-producto" 
+         data-id="37" 
+         data-marca="Nike" 
+         data-precio="99990"
+         data-tipo="Zapatillas"
+         data-nombre="Nike Dunk Low Retro Panda">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500" alt="Nike Dunk Low Retro Panda">
+        </div>
+        <div class="card-info">
+            <span class="marca">Nike</span>
+            <h3>Nike Dunk Low Retro Panda</h3>
+            <p class="precio">$99.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(37)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 38 -->
+    <div class="card-producto" 
+         data-id="38" 
+         data-marca="Vans" 
+         data-precio="64990"
+         data-tipo="Zapatillas"
+         data-nombre="Vans Old Skool Classic Negro">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=500" alt="Vans Old Skool Classic Negro">
+        </div>
+        <div class="card-info">
+            <span class="marca">Vans</span>
+            <h3>Vans Old Skool Classic Negro</h3>
+            <p class="precio">$64.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(38)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 39 -->
+    <div class="card-producto" 
+         data-id="39" 
+         data-marca="Converse" 
+         data-precio="59990"
+         data-tipo="Zapatillas"
+         data-nombre="Converse Chuck Taylor All Star">
+        <div class="card-imagen">
+            <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500" alt="Converse Chuck Taylor All Star">
+        </div>
+        <div class="card-info">
+            <span class="marca">Converse</span>
+            <h3>Converse Chuck Taylor All Star</h3>
+            <p class="precio">$59.990</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito(39)">Agregar al Carrito</button>
+        </div>
+    </div>
+
 </div>
 
-<!-- POLERONES -->
-<section class="carrusel-container" id="polerones">
-	<div class="logo-container">
-		<div class="logo-slider" id="logoSlider">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-		</div>
-	</div>
-	<button class="carrusel-btn prev" id="prevBtn">❮</button>
-	<div class="carrusel-wrapper">
-		<div class="carrusel-polerones" id="carrusel">
-			<div class="poleron-slide"><img src="synas largos.png" alt="Poleron Synas"></div>
-			<div class="poleron-slide"><img src="esentials polerones.png" alt="Poleron Essentials"></div>
-			<div class="poleron-slide"><img src="corteiz polerones.png" alt="Poleron Corteiz"></div>
-			<div class="poleron-slide"><img src="polerones supreme.png" alt="polerones supreme"></div>
-			<div class="poleron-slide"><img src="polerones nike tech.png" alt="polerones nike tech"></div>
-			<div class="poleron-slide"><img src="polerones trapstar.png" alt="polerones trapstar"></div>
-			<div class="poleron-slide"><img src="synas largos.png" alt="Poleron Synas 2"></div>
-			<div class="poleron-slide"><img src="esentials polerones.png" alt="Poleron Essentials 2"></div>
-			<div class="poleron-slide"><img src="corteiz polerones.png" alt="Poleron Corteiz 2"></div>
-			<div class="poleron-slide"><img src="polerones supreme.png" alt="polerones supreme 2"></div>
-			<div class="poleron-slide"><img src="polerones nike tech.png" alt="polerones nike tech 2"></div>
-			<div class="poleron-slide"><img src="polerones trapstar.png" alt="polerones trapstar 2"></div>
-		</div>
-	</div>
-	<button class="carrusel-btn next" id="nextBtn">❯</button>
-</section>
-<div class="swipe-indicator">
-	<div class="swipe-track">
-		<div class="swipe-dot"></div>
-	</div>
-	<span class="swipe-text">Desliza</span>
-</div>
-
-<!-- PANTALONES -->
-<section class="carrusel-container" id="pantalones">
-	<div class="logo-container">
-		<div class="logo-slider" id="logoSliderPantalones">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-		</div>
-	</div>
-	<button class="carrusel-btn prev" id="prevBtnPantalones">❮</button>
-	<div class="carrusel-wrapper">
-		<div class="carrusel-polerones" id="carruselPantalones">
-			<div class="poleron-slide"><img src="pantalones syna.png" alt="Pantalones Synas"></div>
-			<div class="poleron-slide"><img src="pantalones essentials.png" alt="Pantalones Essentials"></div>
-			<div class="poleron-slide"><img src="pantalones corteiz.png" alt="Pantalones Corteiz"></div>
-			<div class="poleron-slide"><img src="pantalones supreme.png" alt="Pantalones Supreme"></div>
-			<div class="poleron-slide"><img src="pantalones nike tech.png" alt="Pantalones Nike Tech"></div>
-			<div class="poleron-slide"><img src="pantalones trapstar.png" alt="Pantalones Trapstar"></div>
-			<div class="poleron-slide"><img src="pantalones syna.png" alt="Pantalones Synas 2"></div>
-			<div class="poleron-slide"><img src="pantalones essentials.png" alt="Pantalones Essentials 2"></div>
-			<div class="poleron-slide"><img src="pantalones corteiz.png" alt="Pantalones Corteiz 2"></div>
-			<div class="poleron-slide"><img src="pantalones supreme.png" alt="Pantalones Supreme 2"></div>
-			<div class="poleron-slide"><img src="pantalones nike tech.png" alt="Pantalones Nike Tech 2"></div>
-			<div class="poleron-slide"><img src="pantalones trapstar.png" alt="Pantalones Trapstar 2"></div>
-		</div>
-	</div>
-	<button class="carrusel-btn next" id="nextBtnPantalones">❯</button>
-</section>
-<div class="swipe-indicator">
-	<div class="swipe-track">
-		<div class="swipe-dot"></div>
-	</div>
-	<span class="swipe-text">Desliza</span>
-</div>
-
-<!-- SHORTS -->
-<section class="carrusel-container" id="shorts">
-	<div class="logo-container">
-		<div class="logo-slider" id="logoSliderShorts">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo nike pequenio.png" alt="nike tech" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-		</div>
-	</div>
-	<button class="carrusel-btn prev" id="prevBtnShorts">❮</button>
-	<div class="carrusel-wrapper">
-		<div class="carrusel-polerones" id="carruselShorts">
-			<div class="poleron-slide"><img src="shorts syna world.png" alt="Shorts Synas"></div>
-			<div class="poleron-slide"><img src="shorts essentials.png" alt="Shorts Essentials"></div>
-			<div class="poleron-slide"><img src="short corteiz.png" alt="Shorts Corteiz"></div>
-			<div class="poleron-slide"><img src="short supreme.png" alt="Shorts Supreme"></div>
-			<div class="poleron-slide"><img src="short nike tech.png" alt="Shorts Nike Tech"></div>
-			<div class="poleron-slide"><img src="short trapstar.png" alt="Shorts Trapstar"></div>
-			<div class="poleron-slide"><img src="shorts syna world.png" alt="Shorts Synas 2"></div>
-			<div class="poleron-slide"><img src="shorts essentials.png" alt="Shorts Essentials 2"></div>
-			<div class="poleron-slide"><img src="short corteiz.png" alt="Shorts Corteiz 2"></div>
-			<div class="poleron-slide"><img src="short supreme.png" alt="Shorts Supreme 2"></div>
-			<div class="poleron-slide"><img src="short nike tech.png" alt="Shorts Nike Tech 2"></div>
-			<div class="poleron-slide"><img src="short trapstar.png" alt="Shorts Trapstar 2"></div>
-		</div>
-	</div>
-	<button class="carrusel-btn next" id="nextBtnShorts">❯</button>
-</section>
-<div class="swipe-indicator">
-	<div class="swipe-track">
-		<div class="swipe-dot"></div>
-	</div>
-	<span class="swipe-text">Desliza</span>
-</div>
-
-<!-- POLERAS -->
-<section class="carrusel-container" id="poleras">
-	<div class="logo-container">
-		<div class="logo-slider" id="logoSliderPoleras">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo essentials.png" alt="Essentials" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme negro.png" alt="Supreme" class="brand-logo">
-			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
-			<img src="logo trapstar.png" alt="trapstar" class="brand-logo">
-		</div>
-	</div>
-	<button class="carrusel-btn prev" id="prevBtnPoleras">❮</button>
-	<div class="carrusel-wrapper">
-		<div class="carrusel-polerones" id="carruselPoleras">
-			<div class="poleron-slide"><img src="poleras syna.png" alt="Poleras Synas"></div>
-			<div class="poleron-slide"><img src="poleras essentials.png" alt="Poleras Essentials"></div>
-			<div class="poleron-slide"><img src="poleras corteiz.png" alt="Poleras Corteiz"></div>
-			<div class="poleron-slide"><img src="poleras supreme.png" alt="Poleras Supreme"></div>
-			<div class="poleron-slide"><img src="poleras jordan.png" alt="Poleras Jordan"></div>
-			<div class="poleron-slide"><img src="poleras trapstar.png" alt="Poleras Trapstar"></div>
-			<div class="poleron-slide"><img src="poleras syna.png" alt="Poleras Synas 2"></div>
-			<div class="poleron-slide"><img src="poleras essentials.png" alt="Poleras Essentials 2"></div>
-			<div class="poleron-slide"><img src="poleras corteiz.png" alt="Poleras Corteiz 2"></div>
-			<div class="poleron-slide"><img src="poleras supreme.png" alt="Poleras Supreme 2"></div>
-			<div class="poleron-slide"><img src="poleras jordan.png" alt="Poleras Jordan 2"></div>
-			<div class="poleron-slide"><img src="poleras trapstar.png" alt="Poleras Trapstar 2"></div>
-		</div>
-	</div>
-	<button class="carrusel-btn next" id="nextBtnPoleras">❯</button>
-</section>
-<div class="swipe-indicator">
-	<div class="swipe-track">
-		<div class="swipe-dot"></div>
-	</div>
-	<span class="swipe-text">Desliza</span>
-</div>
-
-<!-- CHAQUETAS -->
-<section class="carrusel-container" id="chaquetas">
-	<div class="logo-container">
-		<div class="logo-slider" id="logoSliderChaquetas">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme x north face.png" alt="Supreme x North Face" class="brand-logo">
-			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
-			<img src="logo trapstar.png" alt="Trapstar" class="brand-logo">
-			<img src="logo syna ahora si.png" alt="Synas" class="brand-logo">
-			<img src="logo corteiz.png" alt="Corteiz" class="brand-logo">
-			<img src="logo supreme x north face.png" alt="Supreme x North Face" class="brand-logo">
-			<img src="logo jordan.png" alt="Jordan" class="brand-logo">
-			<img src="logo trapstar.png" alt="Trapstar" class="brand-logo">
-		</div>
-	</div>
-	<button class="carrusel-btn prev" id="prevBtnChaquetas">❮</button>
-	<div class="carrusel-wrapper">
-		<div class="carrusel-polerones" id="carruselChaquetas">
-			<div class="poleron-slide"><img src="chaquetas syna.png" alt="Chaquetas Synas"></div>
-			<div class="poleron-slide"><img src="chaquetas corteiz.png" alt="Chaquetas Corteiz"></div>
-			<div class="poleron-slide"><img src="chaquetas supreme x north face.png" alt="Chaquetas Supreme x North Face"></div>
-			<div class="poleron-slide"><img src="chaquetas jordan.png" alt="Chaquetas Jordan"></div>
-			<div class="poleron-slide"><img src="chaquetas trapstar.png" alt="Chaquetas Trapstar"></div>
-			<div class="poleron-slide"><img src="chaquetas syna.png" alt="Chaquetas Synas 2"></div>
-			<div class="poleron-slide"><img src="chaquetas corteiz.png" alt="Chaquetas Corteiz 2"></div>
-			<div class="poleron-slide"><img src="chaquetas supreme x north face.png" alt="Chaquetas Supreme x North Face 2"></div>
-			<div class="poleron-slide"><img src="chaquetas jordan.png" alt="Chaquetas Jordan 2"></div>
-			<div class="poleron-slide"><img src="chaquetas trapstar.png" alt="Chaquetas Trapstar 2"></div>
-		</div>
-	</div>
-	<button class="carrusel-btn next" id="nextBtnChaquetas">❯</button>
-</section>
-<div class="swipe-indicator">
-	<div class="swipe-track">
-		<div class="swipe-dot"></div>
-	</div>
-	<span class="swipe-text">Desliza</span>
-</div>
-
-<!-- ZAPATILLAS -->
-<section class="zapatillas-section" id="zapatillas">
-	<div class="zapatilla-item"><img id="supreme" src="zapatillas supreme.png" alt="Zapatillas Supreme"></div>
-	<div class="zapatilla-item"><img id="retro-4" src="zapatillas nike 1.png" alt="Zapatillas Nike 1"></div>
-	<div class="zapatilla-item"><img src="zapatillas nike 2.png" alt="Zapatillas Nike 2"></div>
-	<div class="zapatilla-item"><img src="zapatillas nike 3 .png" alt="Zapatillas Nike 3"></div>
-	<div class="zapatilla-item"><img id="air-force-one" src="air force one (1).png" alt="Zapatillas air force one 1"></div>
-	<div class="zapatilla-item"><img src="air force one (2).png" alt="Zapatillas air force one 2"></div>
-	<div class="zapatilla-item"><img src="air force one (3).png" alt="Zapatillas air force one 3"></div>
-	<div class="zapatilla-item"><img src="air force one (4).png" alt="Zapatillas air force one 4"></div>
-	<div class="zapatilla-item"><img id="air-max" src="air max (1).png" alt="air max 1"></div>
-	<div class="zapatilla-item"><img src="air max (2).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img src="air max (3).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img id="jordan-3" src="jordan 3 (1).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img src="jordan 3 (2).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img src="jordan 3 (3).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img id="louis-voutton" src="louis voutton (1).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img src="louis voutton (2).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img id="shocks-tn" src="shocks tl.png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img id="adidas" src="adidas.png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img id="amiri" src="amiri (1).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img src="amiri (2).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img id="jordan-1" src="jordan 1 (1).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img src="jordan 1 (2).png" alt="air max 2"></div>
-	<div class="zapatilla-item"><img src="jordan 1 (3).png" alt="air max 2"></div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-	<div class="footer-content">
-		<div class="footer-section">
-			<h3>Black Cat Store</h3>
-			<p>Calidad G5 garantizada</p>
-			<p>Envíos a todo Chile</p>
-		</div>
-		
-		<div class="footer-section">
-			<div class="social-links">
-				<a href="https://www.instagram.com/blackcatstore_cl/" target="_blank" class="instagram-link">
-					<svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-						<path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
-					</svg>
-					<span class="instagram-text">@blackcatstore_cl</span>
-				</a>
-			</div>
-		</div>
-		
-		<div class="footer-section">
-			<h4>Contacto</h4>
-			<p>Instagram: @blackcatstore_cl</p>
-			<p>Región de la Araucanía, Chile</p>
-		</div>
-	</div>
-	
-	<div class="footer-bottom">
-		<p>&copy; 2024 Black Cat Store. Todos los derechos reservados.</p>
-	</div>
-</footer>
-
+<!-- SCRIPT JAVASCRIPT -->
 <script src="script.js"></script>
-
-</body>
-</html>

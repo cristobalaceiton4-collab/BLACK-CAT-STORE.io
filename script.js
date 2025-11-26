@@ -1,306 +1,498 @@
-// Carrusel de Polerones
-const carrusel = document.getElementById('carrusel');
-const logoSlider = document.getElementById('logoSlider');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-let currentIndex = 0;
+// BASE DE DATOS DE PRODUCTOS
+const productos = [
+    {
+        id: 1,
+        nombre: "Polerón Syna World Negro",
+        marca: "Syna World",
+        tipo: "Polerón",
+        precio: 49990,
+        imagen: "poleron syna world negro full.webp"
+    },
+    {
+        id: 2,
+        nombre: "Polerón Sp5der Negro y Amarillo",
+        marca: "Sp5der",
+        tipo: "Polerón",
+        precio: 54990,
+        imagen: "poleron sp5der negro amarillo.jpg"
+    },
+    {
+        id: 3,
+        nombre: "Polerón Syna World Verde",
+        marca: "Syna World",
+        tipo: "Polerón",
+        precio: 49990,
+        imagen: "poleron syna world negro verde.webp"
+    },
+    {
+        id: 4,
+        nombre: "Polerón Nike Tech Fleece Azul",
+        marca: "Nike",
+        tipo: "Polerón",
+        precio: 79990,
+        imagen: "nike tech azul.webp"
+    },
+    {
+        id: 5,
+        nombre: "Polerón Corteiz Negro Estrellas",
+        marca: "Corteiz",
+        tipo: "Polerón",
+        precio: 65990,
+        imagen: "corteiz negro estrellas.png"
+    },
+    {
+        id: 6,
+        nombre: "Polerón Corteiz Blanco",
+        marca: "Corteiz",
+        tipo: "Polerón",
+        precio: 65990,
+        imagen: "corteiz epico blanco.webp"
+    },
+    {
+        id: 7,
+        nombre: "Polerón Trapstar Amarillo",
+        marca: "Trapstar",
+        tipo: "Polerón",
+        precio: 50000,
+        imagen: "trapstar linea amarilla.webp"
+    },
+    {
+        id: 8,
+        nombre: "Polerón Trapstar azul rayos",
+        marca: "Trapstar",
+        tipo: "Polerón",
+        precio: 65000,
+        imagen: "trapstar azul rayos.jpeg"
+    },
+    {
+        id: 9,
+        nombre: "Polerón Trapstar shooters negro",
+        marca: "Trapstar",
+        tipo: "Polerón",
+        precio: 59000,
+        imagen: "poleron shoteers full negro.webp"
+    },
+    {
+        id: 10,
+        nombre: "Nike Tech Fleece Negro",
+        marca: "Nike",
+        tipo: "Polerón",
+        precio: 85990,
+        imagen: "poleron nike tech negro.webp"
+    },
+    {
+        id: 11,
+        nombre: "Denim Tears Negro Flores Blancas",
+        marca: "Demin Tears",
+        tipo: "Polerón",
+        precio: 75990,
+        imagen: "demin tears negro flores blancas.webp"
+    },
+    {
+        id: 12,
+        nombre: "Denim Tears Rosa Blanco",
+        marca: "Demin Tears",
+        tipo: "Polerón",
+        precio: 75990,
+        imagen: "Poleron demin tears rosa blanco.webp"
+    },
+    {
+        id: 13,
+        nombre: "Denim Tears Azul Flores Blancas",
+        marca: "Demin Tears",
+        tipo: "Polerón",
+        precio: 75990,
+        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-Vintage-Denim-Jacket-Blue.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 14,
+        nombre: "Denim Tears Blanco Flores Negras",
+        marca: "Demin Tears",
+        tipo: "Polerón",
+        precio: 75990,
+        imagen: "https://images.stockx.com/images/Denim-Tears-The-Cotton-Wreath-Hoodie-White.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 15,
+        nombre: "Denim Tears Verde Oliva",
+        marca: "Demin Tears",
+        tipo: "Polerón",
+        precio: 78990,
+        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-Trucker-Jacket-Olive.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 16,
+        nombre: "Trapstar Shooters Rojo",
+        marca: "Trapstar",
+        tipo: "Polerón",
+        precio: 69990,
+        imagen: "https://images.stockx.com/images/Trapstar-Chenille-Decoded-20-Hoodie-Red.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 17,
+        nombre: "Trapstar Irongate Negro Blanco",
+        marca: "Trapstar",
+        tipo: "Polerón",
+        precio: 72990,
+        imagen: "https://images.stockx.com/images/Trapstar-Irongate-Detachable-Puffer-Jacket-Black-White.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 18,
+        nombre: "Trapstar Shooters Gris",
+        marca: "Trapstar",
+        tipo: "Polerón",
+        precio: 68990,
+        imagen: "https://images.stockx.com/images/Trapstar-Chenille-Decoded-Hoodie-Grey.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 19,
+        nombre: "Nike Tech Fleece Gris",
+        marca: "Nike",
+        tipo: "Polerón",
+        precio: 84990,
+        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Full-Zip-Hoodie-Dark-Grey-Heather-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 20,
+        nombre: "Nike Tech Fleece Verde",
+        marca: "Nike",
+        tipo: "Polerón",
+        precio: 86990,
+        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Full-Zip-Hoodie-Cargo-Khaki.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 21,
+        nombre: "Nike Tech Fleece Morado",
+        marca: "Nike",
+        tipo: "Polerón",
+        precio: 87990,
+        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Full-Zip-Hoodie-Purple-Smoke.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 22,
+        nombre: "Trapstar Pantalón Negro",
+        marca: "Trapstar",
+        tipo: "Pantalón",
+        precio: 62990,
+        imagen: "https://images.stockx.com/images/Trapstar-Chenille-Decoded-Trackpants-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 23,
+        nombre: "Trapstar Pantalón Rojo",
+        marca: "Trapstar",
+        tipo: "Pantalón",
+        precio: 64990,
+        imagen: "https://images.stockx.com/images/Trapstar-Irongate-Trackpants-Red.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 24,
+        nombre: "Nike Tech Fleece Jogger Negro",
+        marca: "Nike",
+        tipo: "Pantalón",
+        precio: 69990,
+        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Jogger-Black-Heather-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 25,
+        nombre: "Nike Tech Fleece Jogger Gris",
+        marca: "Nike",
+        tipo: "Pantalón",
+        precio: 68990,
+        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Jogger-Dark-Grey-Heather.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 26,
+        nombre: "Denim Tears Jeans Negro",
+        marca: "Demin Tears",
+        tipo: "Pantalón",
+        precio: 89990,
+        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-501-Original-Fit-Jeans-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 27,
+        nombre: "Denim Tears Jeans Azul",
+        marca: "Demin Tears",
+        tipo: "Pantalón",
+        precio: 89990,
+        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-501-Original-Fit-Jeans-Medium-Indigo.jpg?fit=fill&bg=FFFFFF&w=700"
+    },
+    {
+        id: 28,
+        nombre: "Nike Air Force 1 '07 Blanco",
+        marca: "Nike",
+        tipo: "Zapatillas",
+        precio: 94990,
+        imagen: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500"
+    },
+    {
+        id: 29,
+        nombre: "Adidas Yeezy Boost 350 V2",
+        marca: "Adidas",
+        tipo: "Zapatillas",
+        precio: 149990,
+        imagen: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"
+    },
+    {
+        id: 30,
+        nombre: "Nike Air Jordan 1 Mid",
+        marca: "Nike",
+        tipo: "Zapatillas",
+        precio: 109990,
+        imagen: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=500"
+    },
+    {
+        id: 31,
+        nombre: "Stussy Basic Logo Hoodie Gris",
+        marca: "Stussy",
+        tipo: "Polerón",
+        precio: 55990,
+        imagen: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500"
+    },
+    {
+        id: 32,
+        nombre: "Carhartt WIP Chase Hoodie Marrón",
+        marca: "Carhartt",
+        tipo: "Polerón",
+        precio: 69990,
+        imagen: "https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=500"
+    },
+    {
+        id: 33,
+        nombre: "Nike Sportswear Club Tee Negro",
+        marca: "Nike",
+        tipo: "Polera",
+        precio: 29990,
+        imagen: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+    },
+    {
+        id: 34,
+        nombre: "Adidas Essential 3-Stripes Tee",
+        marca: "Adidas",
+        tipo: "Polera",
+        precio: 32990,
+        imagen: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500"
+    },
+    {
+        id: 35,
+        nombre: "Nike Windrunner Jacket Azul",
+        marca: "Nike",
+        tipo: "Chaqueta",
+        precio: 84990,
+        imagen: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
+    },
+    {
+        id: 36,
+        nombre: "Adidas SST Track Jacket Negro",
+        marca: "Adidas",
+        tipo: "Chaqueta",
+        precio: 79990,
+        imagen: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500"
+    },
+    {
+        id: 37,
+        nombre: "Nike Dunk Low Retro Panda",
+        marca: "Nike",
+        tipo: "Zapatillas",
+        precio: 99990,
+        imagen: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500"
+    },
+    {
+        id: 38,
+        nombre: "Vans Old Skool Classic Negro",
+        marca: "Vans",
+        tipo: "Zapatillas",
+        precio: 64990,
+        imagen: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=500"
+    },
+    {
+        id: 39,
+        nombre: "Converse Chuck Taylor All Star",
+        marca: "Converse",
+        tipo: "Zapatillas",
+        precio: 59990,
+        imagen: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500"
+    }
+];
 
-function updateCarrusel() {
-	const slideWidth = carrusel.children[0].offsetWidth;
-	const logoWidth = logoSlider.children[0].offsetWidth;
-	carrusel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-	logoSlider.style.transform = `translateX(-${currentIndex * logoWidth}px)`;
+// CARRITO
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+// ACTUALIZAR CONTADOR
+function actualizarContador() {
+    const count = carrito.reduce((total, item) => total + item.cantidad, 0);
+    const contador = document.getElementById('carrito-count');
+    if (contador) {
+        contador.textContent = count;
+    }
 }
 
-nextBtn.addEventListener('click', () => {
-	const totalSlides = carrusel.children.length;
-	if (currentIndex < totalSlides - 1) { 
-		currentIndex++; 
-		updateCarrusel(); 
-	}
-});
-
-prevBtn.addEventListener('click', () => {
-	if (currentIndex > 0) { 
-		currentIndex--; 
-		updateCarrusel(); 
-	}
-});
-
-window.addEventListener('resize', updateCarrusel);
-
-// Funcionalidad táctil para móviles - Polerones
-let touchStartX = 0;
-let touchEndX = 0;
-
-carrusel.addEventListener('touchstart', (e) => {
-	touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
-carrusel.addEventListener('touchend', (e) => {
-	touchEndX = e.changedTouches[0].screenX;
-	handleSwipe();
-});
-
-function handleSwipe() {
-	const swipeThreshold = 50;
-	if (touchEndX < touchStartX - swipeThreshold) {
-		// Deslizar a la izquierda (siguiente)
-		const totalSlides = carrusel.children.length;
-		if (currentIndex < totalSlides - 1) {
-			currentIndex++;
-			updateCarrusel();
-		}
-	}
-	if (touchEndX > touchStartX + swipeThreshold) {
-		// Deslizar a la derecha (anterior)
-		if (currentIndex > 0) {
-			currentIndex--;
-			updateCarrusel();
-		}
-	}
+// AGREGAR AL CARRITO
+function agregarAlCarrito(idProducto) {
+    const producto = productos.find(p => p.id === idProducto);
+    
+    if (!producto) {
+        alert('Producto no encontrado');
+        return;
+    }
+    
+    const productoEnCarrito = carrito.find(item => item.id === idProducto);
+    
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad++;
+    } else {
+        carrito.push({
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            imagen: producto.imagen,
+            cantidad: 1
+        });
+    }
+    
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarContador();
+    
+    alert('✓ Producto agregado al carrito');
 }
 
-// Carrusel de Pantalones
-const carruselPantalones = document.getElementById('carruselPantalones');
-const logoSliderPantalones = document.getElementById('logoSliderPantalones');
-const prevBtnPantalones = document.getElementById('prevBtnPantalones');
-const nextBtnPantalones = document.getElementById('nextBtnPantalones');
-let currentIndexPantalones = 0;
-
-function updateCarruselPantalones() {
-	const slideWidth = carruselPantalones.children[0].offsetWidth;
-	const logoWidth = logoSliderPantalones.children[0].offsetWidth;
-	carruselPantalones.style.transform = `translateX(-${currentIndexPantalones * slideWidth}px)`;
-	logoSliderPantalones.style.transform = `translateX(-${currentIndexPantalones * logoWidth}px)`;
+// FILTRAR PRODUCTOS
+function filtrarProductos() {
+    const buscador = document.getElementById('buscador').value.toLowerCase();
+    const filtroMarca = document.getElementById('filtro-marca').value;
+    const filtroTipo = document.getElementById('filtro-tipo').value;
+    const filtroPrecio = document.getElementById('filtro-precio').value;
+    
+    const cards = document.querySelectorAll('.card-producto');
+    
+    cards.forEach(card => {
+        const nombre = card.dataset.nombre.toLowerCase();
+        const marca = card.dataset.marca;
+        const tipo = card.dataset.tipo;
+        const precio = parseInt(card.dataset.precio);
+        
+        let mostrar = true;
+        
+        if (buscador && !nombre.includes(buscador)) {
+            mostrar = false;
+        }
+        
+        if (filtroMarca && marca !== filtroMarca) {
+            mostrar = false;
+        }
+        
+        if (filtroTipo && tipo !== filtroTipo) {
+            mostrar = false;
+        }
+        
+        if (filtroPrecio) {
+            const [min, max] = filtroPrecio.split('-').map(Number);
+            if (precio < min || precio > max) {
+                mostrar = false;
+            }
+        }
+        
+        if (mostrar) {
+            card.classList.remove('oculto');
+        } else {
+            card.classList.add('oculto');
+        }
+    });
 }
 
-nextBtnPantalones.addEventListener('click', () => {
-	const totalSlides = carruselPantalones.children.length;
-	if (currentIndexPantalones < totalSlides - 1) { 
-		currentIndexPantalones++; 
-		updateCarruselPantalones(); 
-	}
-});
-
-prevBtnPantalones.addEventListener('click', () => {
-	if (currentIndexPantalones > 0) { 
-		currentIndexPantalones--; 
-		updateCarruselPantalones(); 
-	}
-});
-
-window.addEventListener('resize', updateCarruselPantalones);
-
-// Funcionalidad táctil - Pantalones
-let touchStartXPantalones = 0;
-let touchEndXPantalones = 0;
-
-carruselPantalones.addEventListener('touchstart', (e) => {
-	touchStartXPantalones = e.changedTouches[0].screenX;
-}, { passive: true });
-
-carruselPantalones.addEventListener('touchend', (e) => {
-	touchEndXPantalones = e.changedTouches[0].screenX;
-	handleSwipePantalones();
-});
-
-function handleSwipePantalones() {
-	const swipeThreshold = 50;
-	if (touchEndXPantalones < touchStartXPantalones - swipeThreshold) {
-		const totalSlides = carruselPantalones.children.length;
-		if (currentIndexPantalones < totalSlides - 1) {
-			currentIndexPantalones++;
-			updateCarruselPantalones();
-		}
-	}
-	if (touchEndXPantalones > touchStartXPantalones + swipeThreshold) {
-		if (currentIndexPantalones > 0) {
-			currentIndexPantalones--;
-			updateCarruselPantalones();
-		}
-	}
+// LIMPIAR FILTROS
+function limpiarFiltros() {
+    document.getElementById('buscador').value = '';
+    document.getElementById('filtro-marca').value = '';
+    document.getElementById('filtro-tipo').value = '';
+    document.getElementById('filtro-precio').value = '';
+    
+    const cards = document.querySelectorAll('.card-producto');
+    cards.forEach(card => card.classList.remove('oculto'));
 }
 
-// Carrusel de Shorts
-const carruselShorts = document.getElementById('carruselShorts');
-const logoSliderShorts = document.getElementById('logoSliderShorts');
-const prevBtnShorts = document.getElementById('prevBtnShorts');
-const nextBtnShorts = document.getElementById('nextBtnShorts');
-let currentIndexShorts = 0;
-
-function updateCarruselShorts() {
-	const slideWidth = carruselShorts.children[0].offsetWidth;
-	const logoWidth = logoSliderShorts.children[0].offsetWidth;
-	carruselShorts.style.transform = `translateX(-${currentIndexShorts * slideWidth}px)`;
-	logoSliderShorts.style.transform = `translateX(-${currentIndexShorts * logoWidth}px)`;
+// CAMBIAR CANTIDAD
+function cambiarCantidad(id, cambio) {
+    const producto = carrito.find(item => item.id === id);
+    if (producto) {
+        producto.cantidad += cambio;
+        if (producto.cantidad <= 0) {
+            eliminarDelCarrito(id);
+        } else {
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+            actualizarContador();
+        }
+    }
 }
 
-nextBtnShorts.addEventListener('click', () => {
-	const totalSlides = carruselShorts.children.length;
-	if (currentIndexShorts < totalSlides - 1) { 
-		currentIndexShorts++; 
-		updateCarruselShorts(); 
-	}
-});
-
-prevBtnShorts.addEventListener('click', () => {
-	if (currentIndexShorts > 0) { 
-		currentIndexShorts--; 
-		updateCarruselShorts(); 
-	}
-});
-
-window.addEventListener('resize', updateCarruselShorts);
-
-// Funcionalidad táctil - Shorts
-let touchStartXShorts = 0;
-let touchEndXShorts = 0;
-
-carruselShorts.addEventListener('touchstart', (e) => {
-	touchStartXShorts = e.changedTouches[0].screenX;
-}, { passive: true });
-
-carruselShorts.addEventListener('touchend', (e) => {
-	touchEndXShorts = e.changedTouches[0].screenX;
-	handleSwipeShorts();
-});
-
-function handleSwipeShorts() {
-	const swipeThreshold = 50;
-	if (touchEndXShorts < touchStartXShorts - swipeThreshold) {
-		const totalSlides = carruselShorts.children.length;
-		if (currentIndexShorts < totalSlides - 1) {
-			currentIndexShorts++;
-			updateCarruselShorts();
-		}
-	}
-	if (touchEndXShorts > touchStartXShorts + swipeThreshold) {
-		if (currentIndexShorts > 0) {
-			currentIndexShorts--;
-			updateCarruselShorts();
-		}
-	}
+// ELIMINAR DEL CARRITO
+function eliminarDelCarrito(id) {
+    carrito = carrito.filter(item => item.id !== id);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    mostrarCarrito();
+    actualizarContador();
 }
 
-// Carrusel de Poleras
-const carruselPoleras = document.getElementById('carruselPoleras');
-const logoSliderPoleras = document.getElementById('logoSliderPoleras');
-const prevBtnPoleras = document.getElementById('prevBtnPoleras');
-const nextBtnPoleras = document.getElementById('nextBtnPoleras');
-let currentIndexPoleras = 0;
-
-function updateCarruselPoleras() {
-	const slideWidth = carruselPoleras.children[0].offsetWidth;
-	const logoWidth = logoSliderPoleras.children[0].offsetWidth;
-	carruselPoleras.style.transform = `translateX(-${currentIndexPoleras * slideWidth}px)`;
-	logoSliderPoleras.style.transform = `translateX(-${currentIndexPoleras * logoWidth}px)`;
+// MOSTRAR CARRITO
+function mostrarCarrito() {
+    const contenedor = document.getElementById('carrito-items');
+    const totalElement = document.getElementById('total');
+    const carritoVacio = document.getElementById('carrito-vacio');
+    const carritoLleno = document.getElementById('carrito-lleno');
+    
+    if (!contenedor) return;
+    
+    if (carrito.length === 0) {
+        carritoVacio.style.display = 'block';
+        carritoLleno.style.display = 'none';
+        return;
+    }
+    
+    carritoVacio.style.display = 'none';
+    carritoLleno.style.display = 'block';
+    
+    contenedor.innerHTML = '';
+    let total = 0;
+    
+    carrito.forEach(item => {
+        total += item.precio * item.cantidad;
+        
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'carrito-item';
+        itemDiv.innerHTML = `
+            <img src="${item.imagen}" alt="${item.nombre}" class="item-imagen">
+            <div class="item-info">
+                <h3>${item.nombre}</h3>
+                <p>$${item.precio.toLocaleString('es-CL')}</p>
+            </div>
+            <div class="item-cantidad">
+                <button class="btn-cantidad" onclick="cambiarCantidad(${item.id}, -1)">-</button>
+                <span>${item.cantidad}</span>
+                <button class="btn-cantidad" onclick="cambiarCantidad(${item.id}, 1)">+</button>
+            </div>
+            <button class="btn-eliminar" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
+        `;
+        contenedor.appendChild(itemDiv);
+    });
+    
+    totalElement.textContent = `$${total.toLocaleString('es-CL')}`;
 }
 
-nextBtnPoleras.addEventListener('click', () => {
-	const totalSlides = carruselPoleras.children.length;
-	if (currentIndexPoleras < totalSlides - 1) { 
-		currentIndexPoleras++; 
-		updateCarruselPoleras(); 
-	}
-});
-
-prevBtnPoleras.addEventListener('click', () => {
-	if (currentIndexPoleras > 0) { 
-		currentIndexPoleras--; 
-		updateCarruselPoleras(); 
-	}
-});
-
-window.addEventListener('resize', updateCarruselPoleras);
-
-// Funcionalidad táctil - Poleras
-let touchStartXPoleras = 0;
-let touchEndXPoleras = 0;
-
-carruselPoleras.addEventListener('touchstart', (e) => {
-	touchStartXPoleras = e.changedTouches[0].screenX;
-}, { passive: true });
-
-carruselPoleras.addEventListener('touchend', (e) => {
-	touchEndXPoleras = e.changedTouches[0].screenX;
-	handleSwipePoleras();
-});
-
-function handleSwipePoleras() {
-	const swipeThreshold = 50;
-	if (touchEndXPoleras < touchStartXPoleras - swipeThreshold) {
-		const totalSlides = carruselPoleras.children.length;
-		if (currentIndexPoleras < totalSlides - 1) {
-			currentIndexPoleras++;
-			updateCarruselPoleras();
-		}
-	}
-	if (touchEndXPoleras > touchStartXPoleras + swipeThreshold) {
-		if (currentIndexPoleras > 0) {
-			currentIndexPoleras--;
-			updateCarruselPoleras();
-		}
-	}
+// FUNCIÓN PARA IR A PAGAR
+function finalizarCompra() {
+    if (carrito.length === 0) {
+        alert('El carrito está vacío');
+        return;
+    }
+    
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    window.location.href = 'mercadopago.html';
 }
 
-// Carrusel de Chaquetas
-const carruselChaquetas = document.getElementById('carruselChaquetas');
-const logoSliderChaquetas = document.getElementById('logoSliderChaquetas');
-const prevBtnChaquetas = document.getElementById('prevBtnChaquetas');
-const nextBtnChaquetas = document.getElementById('nextBtnChaquetas');
-let currentIndexChaquetas = 0;
-
-function updateCarruselChaquetas() {
-	const slideWidth = carruselChaquetas.children[0].offsetWidth;
-	const logoWidth = logoSliderChaquetas.children[0].offsetWidth;
-	carruselChaquetas.style.transform = `translateX(-${currentIndexChaquetas * slideWidth}px)`;
-	logoSliderChaquetas.style.transform = `translateX(-${currentIndexChaquetas * logoWidth}px)`;
-}
-
-nextBtnChaquetas.addEventListener('click', () => {
-	const totalSlides = carruselChaquetas.children.length;
-	if (currentIndexChaquetas < totalSlides - 1) { 
-		currentIndexChaquetas++; 
-		updateCarruselChaquetas(); 
-	}
+// INICIALIZAR
+document.addEventListener('DOMContentLoaded', function() {
+    actualizarContador();
+    if (document.getElementById('carrito-items')) {
+        mostrarCarrito();
+    }
 });
-
-prevBtnChaquetas.addEventListener('click', () => {
-	if (currentIndexChaquetas > 0) { 
-		currentIndexChaquetas--; 
-		updateCarruselChaquetas(); 
-	}
-});
-
-window.addEventListener('resize', updateCarruselChaquetas);
-
-// Funcionalidad táctil - Chaquetas
-let touchStartXChaquetas = 0;
-let touchEndXChaquetas = 0;
-
-carruselChaquetas.addEventListener('touchstart', (e) => {
-	touchStartXChaquetas = e.changedTouches[0].screenX;
-}, { passive: true });
-
-carruselChaquetas.addEventListener('touchend', (e) => {
-	touchEndXChaquetas = e.changedTouches[0].screenX;
-	handleSwipeChaquetas();
-});
-
-function handleSwipeChaquetas() {
-	const swipeThreshold = 50;
-	if (touchEndXChaquetas < touchStartXChaquetas - swipeThreshold) {
-		const totalSlides = carruselChaquetas.children.length;
-		if (currentIndexChaquetas < totalSlides - 1) {
-			currentIndexChaquetas++;
-			updateCarruselChaquetas();
-		}
-	}
-	if (touchEndXChaquetas > touchStartXChaquetas + swipeThreshold) {
-		if (currentIndexChaquetas > 0) {
-			currentIndexChaquetas--;
-			updateCarruselChaquetas();
-		}
-	}
-}
