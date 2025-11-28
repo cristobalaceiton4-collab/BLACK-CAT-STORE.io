@@ -102,7 +102,7 @@ const productos = [
         marca: "Demin Tears",
         tipo: "Polerón",
         precio: 75990,
-        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-Vintage-Denim-Jacket-Blue.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "demin tears azul blanco.avif"
     },
     {
         id: 14,
@@ -110,7 +110,7 @@ const productos = [
         marca: "Demin Tears",
         tipo: "Polerón",
         precio: 75990,
-        imagen: "https://images.stockx.com/images/Denim-Tears-The-Cotton-Wreath-Hoodie-White.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "poleron demin tears gris blanco.webp"
     },
     {
         id: 15,
@@ -118,7 +118,7 @@ const productos = [
         marca: "Demin Tears",
         tipo: "Polerón",
         precio: 78990,
-        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-Trucker-Jacket-Olive.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "poleron demin tears verde blanco.avif"
     },
     {
         id: 16,
@@ -126,7 +126,7 @@ const productos = [
         marca: "Trapstar",
         tipo: "Polerón",
         precio: 69990,
-        imagen: "https://images.stockx.com/images/Trapstar-Chenille-Decoded-20-Hoodie-Red.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "poleron trapstar shooes rojo.jpeg"
     },
     {
         id: 17,
@@ -134,7 +134,7 @@ const productos = [
         marca: "Trapstar",
         tipo: "Polerón",
         precio: 72990,
-        imagen: "https://images.stockx.com/images/Trapstar-Irongate-Detachable-Puffer-Jacket-Black-White.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "casaca trapstar irongate blanca.avif"
     },
     {
         id: 18,
@@ -142,7 +142,7 @@ const productos = [
         marca: "Trapstar",
         tipo: "Polerón",
         precio: 68990,
-        imagen: "https://images.stockx.com/images/Trapstar-Chenille-Decoded-Hoodie-Grey.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "poleron shooters gris azul.jpg"
     },
     {
         id: 19,
@@ -150,7 +150,7 @@ const productos = [
         marca: "Nike",
         tipo: "Polerón",
         precio: 84990,
-        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Full-Zip-Hoodie-Dark-Grey-Heather-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "poleron nike tech gris.jpg"
     },
     {
         id: 20,
@@ -158,7 +158,7 @@ const productos = [
         marca: "Nike",
         tipo: "Polerón",
         precio: 86990,
-        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Full-Zip-Hoodie-Cargo-Khaki.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "poleron nike tech verde.webp"
     },
     {
         id: 21,
@@ -166,7 +166,7 @@ const productos = [
         marca: "Nike",
         tipo: "Polerón",
         precio: 87990,
-        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Full-Zip-Hoodie-Purple-Smoke.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "poleron nike tech morado.avif"
     },
     {
         id: 22,
@@ -174,7 +174,7 @@ const productos = [
         marca: "Trapstar",
         tipo: "Pantalón",
         precio: 62990,
-        imagen: "https://images.stockx.com/images/Trapstar-Chenille-Decoded-Trackpants-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "pantalon trapstar shoters naranjo.webp"
     },
     {
         id: 23,
@@ -182,7 +182,7 @@ const productos = [
         marca: "Trapstar",
         tipo: "Pantalón",
         precio: 64990,
-        imagen: "https://images.stockx.com/images/Trapstar-Irongate-Trackpants-Red.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "casaca trapstar blanca hd 4ka.webp"
     },
     {
         id: 24,
@@ -190,7 +190,7 @@ const productos = [
         marca: "Nike",
         tipo: "Pantalón",
         precio: 69990,
-        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Jogger-Black-Heather-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "pantalon nike tech negro.webp"
     },
     {
         id: 25,
@@ -198,7 +198,7 @@ const productos = [
         marca: "Nike",
         tipo: "Pantalón",
         precio: 68990,
-        imagen: "https://images.stockx.com/images/Nike-Tech-Fleece-Jogger-Dark-Grey-Heather.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "pantalon nike tech gris.avif"
     },
     {
         id: 26,
@@ -206,7 +206,7 @@ const productos = [
         marca: "Demin Tears",
         tipo: "Pantalón",
         precio: 89990,
-        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-501-Original-Fit-Jeans-Black.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "pantalon buzo demin tears negro.webp"
     },
     {
         id: 27,
@@ -214,7 +214,7 @@ const productos = [
         marca: "Demin Tears",
         tipo: "Pantalón",
         precio: 89990,
-        imagen: "https://images.stockx.com/images/Denim-Tears-x-Levis-501-Original-Fit-Jeans-Medium-Indigo.jpg?fit=fill&bg=FFFFFF&w=700"
+        imagen: "pantalon buzo denim tears azul buzo.webp"
     },
     {
         id: 28,
@@ -222,7 +222,7 @@ const productos = [
         marca: "Nike",
         tipo: "Zapatillas",
         precio: 94990,
-        imagen: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500"
+        imagen: "air force one blanca.jpg"
     },
     {
         id: 29,
@@ -230,7 +230,7 @@ const productos = [
         marca: "Adidas",
         tipo: "Zapatillas",
         precio: 149990,
-        imagen: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"
+        imagen: "yezy.webp"
     },
     {
         id: 30,
@@ -238,7 +238,7 @@ const productos = [
         marca: "Nike",
         tipo: "Zapatillas",
         precio: 109990,
-        imagen: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=500"
+        imagen: "jordan 1 negras.png"
     },
     {
         id: 31,
@@ -246,7 +246,7 @@ const productos = [
         marca: "Stussy",
         tipo: "Polerón",
         precio: 55990,
-        imagen: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500"
+        imagen: "poleron stussi.png"
     },
     {
         id: 32,
@@ -254,7 +254,7 @@ const productos = [
         marca: "Carhartt",
         tipo: "Polerón",
         precio: 69990,
-        imagen: "https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=500"
+        imagen: "poleron carhartt.png"
     },
     {
         id: 33,
@@ -262,7 +262,7 @@ const productos = [
         marca: "Nike",
         tipo: "Polera",
         precio: 29990,
-        imagen: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+        imagen: "polera nike fit negra.jpg"
     },
     {
         id: 34,
@@ -270,7 +270,7 @@ const productos = [
         marca: "Adidas",
         tipo: "Polera",
         precio: 32990,
-        imagen: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500"
+        imagen: "polera adidas lineas negra.png"
     },
     {
         id: 35,
@@ -278,7 +278,7 @@ const productos = [
         marca: "Nike",
         tipo: "Chaqueta",
         precio: 84990,
-        imagen: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
+        imagen: "chauqeta azul.png"
     },
     {
         id: 36,
@@ -286,7 +286,7 @@ const productos = [
         marca: "Adidas",
         tipo: "Chaqueta",
         precio: 79990,
-        imagen: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500"
+        imagen: "chandal negro adidas 2 lineas.png"
     },
     {
         id: 37,
@@ -294,7 +294,7 @@ const productos = [
         marca: "Nike",
         tipo: "Zapatillas",
         precio: 99990,
-        imagen: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500"
+        imagen: "nike dunk low retro negra.png"
     },
     {
         id: 38,
@@ -302,7 +302,7 @@ const productos = [
         marca: "Vans",
         tipo: "Zapatillas",
         precio: 64990,
-        imagen: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=500"
+        imagen: "vans old schol.png"
     },
     {
         id: 39,
@@ -310,7 +310,7 @@ const productos = [
         marca: "Converse",
         tipo: "Zapatillas",
         precio: 59990,
-        imagen: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500"
+        imagen: "vans geis.png"
     }
 ];
 

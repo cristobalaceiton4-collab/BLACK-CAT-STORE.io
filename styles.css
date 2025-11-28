@@ -1,670 +1,869 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: #ffffff;
-    color: #000;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-}
-
-/* ========== NAVBAR MINIMALISTA ========== */
-.nav-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    height: 70px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.nav-contenido {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-}
-
-.dropdown-item {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-item .main-link {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 0.9em;
-    letter-spacing: 2px;
-    padding: 25px 15px;
-    transition: color 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    display: block;
-}
-
-.dropdown-item .main-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 23px;
-    left: 50%;
-    background-color: #0066ff;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.dropdown-item .main-link:hover {
-    color: #0066ff;
-}
-
-.dropdown-item .main-link:hover::after {
-    width: 100%;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    margin-top: 0;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    color: #000;
-    padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.85em;
-    font-weight: 300;
-    transition: all 0.2s ease;
-    border-left: 3px solid transparent;
-}
-
-.dropdown-content a:hover {
-    background-color: #f5f5f5;
-    border-left: 3px solid #0066ff;
-    color: #0066ff;
-}
-
-.dropdown-item:hover .dropdown-content {
-    display: block;
-    animation: fadeIn 0.2s ease;
-}
-
-/* ========== ICONO CARRITO ========== */
-.carrito-icon {
-    position: relative;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
-
-.carrito-icon:hover {
-    color: #0066ff;
-}
-
-.carrito-count {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #0066ff;
-    color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7em;
-    font-weight: 700;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-/* ========== BANNER AJUSTADO ========== */
-.banner-inicio {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    position: relative;
-}
-
-.banner-inicio img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-/* ========== TÍTULO DESTACADOS MINIMALISTA ========== */
-.titulo-seccion {
-    text-align: center;
-    margin: 100px 0 80px 0;
-    padding: 0 20px;
-}
-
-.titulo-seccion h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 700;
-    letter-spacing: 10px;
-    color: #000;
-    text-transform: uppercase;
-    position: relative;
-    display: inline-block;
-}
-
-.titulo-seccion h1::after {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #0066ff, transparent);
-    bottom: -15px;
-    left: 20%;
-}
-
-/* ========== CARDS DESTACADOS ========== */
-.contenedor-destacados {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    padding: 0 30px 100px 30px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.card-destacados {
-    width: 350px;
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.card-destacados:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    border-color: #0066ff;
-}
-
-.card-imagen {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background: #f5f5f5;
-}
-
-.card-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.card-destacados:hover .card-imagen img {
-    transform: scale(1.05);
-}
-
-.card-info {
-    padding: 25px 20px;
-    text-align: center;
-    background: #fff;
-}
-
-.card-info h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #000;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-}
-
-.card-info .precio {
-    margin: 0 0 20px 0;
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #0066ff;
-}
-
-/* ========== BOTÓN AGREGAR AL CARRITO ========== */
-.btn-agregar {
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #000;
-    padding: 12px 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9em;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.btn-agregar:hover {
-    background-color: #0066ff;
-    border-color: #0066ff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
-}
-
-.btn-agregar:active {
-    transform: translateY(0);
-}
-
-/* ========== FILTROS ========== */
-.filtros-container {
-    max-width: 1400px;
-    margin: 0 auto 50px auto;
-    padding: 0 30px;
-}
-
-.filtro-buscador {
-    margin-bottom: 20px;
-}
-
-.filtro-buscador input {
-    width: 100%;
-    padding: 15px 20px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    transition: all 0.3s;
-}
-
-.filtro-buscador input:focus {
-    outline: none;
-    border-color: #0066ff;
-    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
-}
-
-.filtros-grupo {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.filtros-grupo select {
-    flex: 1;
-    min-width: 200px;
-    padding: 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9em;
-    background-color: #fff;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.filtros-grupo select:focus {
-    outline: none;
-    border-color: #0066ff;
-}
-
-.btn-limpiar {
-    padding: 12px 30px;
-    background-color: #f5f5f5;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-limpiar:hover {
-    background-color: #000;
-    border-color: #000;
-    color: #fff;
-}
-
-/* ========== TODOS LOS PRODUCTOS ========== */
-.contenedor-productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    padding: 0 30px 100px 30px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.card-producto {
-    width: 350px;
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.card-producto:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    border-color: #0066ff;
-}
-
-.card-producto .card-imagen {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background: #f5f5f5;
-}
-
-.card-producto .card-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.card-producto:hover .card-imagen img {
-    transform: scale(1.05);
-}
-
-.card-producto .card-info {
-    padding: 25px 20px;
-    text-align: center;
-    background: #fff;
-}
-
-.card-producto .marca {
-    display: inline-block;
-    background: #f5f5f5;
-    color: #666;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.75em;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-.card-producto .card-info h3 {
-    margin: 10px 0;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #000;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-}
-
-.card-producto .card-info .precio {
-    margin: 0 0 20px 0;
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #0066ff;
-}
-
-/* Ocultar productos cuando no coinciden con filtros */
-.card-producto.oculto {
-    display: none;
-}
-
-/* ========== PÁGINA CARRITO ========== */
-.carrito-container {
-    max-width: 1200px;
-    margin: 100px auto;
-    padding: 0 30px;
-}
-
-.carrito-vacio {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.carrito-vacio h2 {
-    font-size: 2em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.carrito-vacio p {
-    font-size: 1.1em;
-    color: #999;
-    margin-bottom: 30px;
-}
-
-.btn-volver {
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #000;
-    padding: 12px 40px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9em;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn-volver:hover {
-    background-color: #0066ff;
-    border-color: #0066ff;
-}
-
-.carrito-items {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 30px;
-}
-
-.carrito-item {
-    display: flex;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.carrito-item:last-child {
-    border-bottom: none;
-}
-
-.item-imagen {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-right: 20px;
-}
-
-.item-info {
-    flex: 1;
-}
-
-.item-info h3 {
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-.item-info p {
-    color: #0066ff;
-    font-weight: 700;
-    font-size: 1.2em;
-}
-
-.item-cantidad {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-right: 30px;
-}
-
-.btn-cantidad {
-    background: #f5f5f5;
-    border: 1px solid #e0e0e0;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 1.2em;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.btn-cantidad:hover {
-    background: #0066ff;
-    color: #fff;
-    border-color: #0066ff;
-}
-
-.btn-eliminar {
-    background: #ff4444;
-    color: #fff;
-    border: none;
-    padding: 8px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.btn-eliminar:hover {
-    background: #cc0000;
-}
-
-.carrito-resumen {
-    background: #f5f5f5;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 30px;
-    text-align: right;
-}
-
-.carrito-resumen h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.total {
-    color: #0066ff;
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-.btn-finalizar {
-    background-color: #0066ff;
-    color: #fff;
-    border: 2px solid #0066ff;
-    padding: 15px 50px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-}
-
-.btn-finalizar:hover {
-    background-color: #000;
-    border-color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-    .nav-contenido {
-        gap: 20px;
-    }
-    
-    .dropdown-item .main-link {
-        font-size: 0.8em;
-        padding: 20px 10px;
-    }
-    
-    .banner-inicio {
-        height: 250px;
-    }
-    
-    .titulo-seccion {
-        margin: 60px 0 50px 0;
-    }
-    
-    .titulo-seccion h1 {
-        letter-spacing: 5px;
-    }
-    
-    .card-destacados,
-    .card-producto {
-        width: 300px;
-    }
-    
-    .card-imagen {
-        height: 350px;
-    }
-
-    .carrito-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .item-imagen {
-        margin: 0 0 15px 0;
-    }
-
-    .item-cantidad {
-        margin: 15px 0;
-    }
-
-    .filtros-grupo {
-        flex-direction: column;
-    }
-    
-    .filtros-grupo select {
-        width: 100%;
-    }
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Cat Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="nav-bar">
+        <div class="nav-contenido">
+            
+            <div class="dropdown-item">
+                <div class="main-link">Ropa</div>
+                <div class="dropdown-content">
+                    <a href="#">Camisetas</a>
+                    <a href="#">Pantalones</a>
+                    <a href="#">Chaquetas</a>
+                </div>
+            </div>
+
+            <div class="dropdown-item">
+                <div class="main-link">Zapatillas</div>
+                <div class="dropdown-content">
+                    <a href="#">Running</a>
+                    <a href="#">Casual</a>
+                    <a href="#">Baloncesto</a>
+                </div>
+            </div>
+            
+            <div class="dropdown-item">
+                <div class="main-link">Accesorios</div>
+                <div class="dropdown-content">
+                    <a href="#">Gorras</a>
+                    <a href="#">Mochilas</a>
+                    <a href="#">Calcetines</a>
+                </div>
+            </div>
+
+            <!-- ICONO DEL CARRITO -->
+            <div class="carrito-icon" onclick="window.location.href='carrito.html'">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="carrito-count" id="carrito-count">0</span>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="banner-inicio">
+        <img src="black cat.png" alt="Black Cat Store Banner">
+    </div>
+
+    <!-- ============================================
+         SECCIÓN: DESTACADOS
+         ============================================ -->
+    <div class="titulo-seccion">
+        <h1>DESTACADOS</h1>
+    </div>
+
+    <div class="contenedor-destacados">
+        
+        <div class="card-destacados">
+            <div class="card-imagen">
+                <img src="poleron syna world negro full.webp" alt="Polerón Syna World Negro">
+            </div>
+            <div class="card-info">
+                <h3>Polerón Syna World</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>
+            </div>
+        </div>
+        
+        <div class="card-destacados">
+            <div class="card-imagen">
+                <img src="poleron sp5der negro amarillo.jpg" alt="Polerón Sp5der Negro y Amarillo">
+            </div>
+            <div class="card-info">
+                <h3>Polerón Sp5der</h3>
+                <p class="precio">$54.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(2)">Agregar al Carrito</button>
+            </div>
+        </div>
+        
+        <div class="card-destacados">
+            <div class="card-imagen">
+                <img src="poleron syna world negro verde.webp" alt="Polerón Syna World Negro y Verde">
+            </div>
+            <div class="card-info">
+                <h3>Polerón Syna World V</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(3)">Agregar al Carrito</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- ============================================
+         SECCIÓN: TODOS LOS PRODUCTOS CON FILTROS
+         ============================================ -->
+    <div class="titulo-seccion">
+        <h1>TODOS LOS PRODUCTOS</h1>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filtros-container">
+        
+        <!-- Buscador -->
+        <div class="filtro-buscador">
+            <input type="text" 
+                   id="buscador" 
+                   placeholder="🔍 Buscar productos..." 
+                   onkeyup="filtrarProductos()">
+        </div>
+
+        <!-- Filtros por marca, tipo y precio -->
+        <div class="filtros-grupo">
+            <select id="filtro-marca" onchange="filtrarProductos()">
+                <option value="">Todas las marcas</option>
+                <option value="Syna World">Syna World</option>
+                <option value="Sp5der">Sp5der</option>
+                <option value="Nike">Nike</option>
+                <option value="Corteiz">Corteiz</option>
+                <option value="Trapstar">Trapstar</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Stussy">Stussy</option>
+                <option value="Carhartt">Carhartt</option>
+                <option value="Vans">Vans</option>
+                <option value="Converse">Converse</option>
+                <option value="Demin Tears">Demin Tears</option>
+            </select>
+
+            <select id="filtro-tipo" onchange="filtrarProductos()">
+                <option value="">Todos los tipos</option>
+                <option value="Polerón">Polerón</option>
+                <option value="Polera">Polera</option>
+                <option value="Short">Short</option>
+                <option value="Zapatillas">Zapatillas</option>
+                <option value="Pantalón">Pantalón</option>
+                <option value="Chaqueta">Chaqueta</option>
+            </select>
+
+            <select id="filtro-precio" onchange="filtrarProductos()">
+                <option value="">Todos los precios</option>
+                <option value="0-50000">Menos de $50.000</option>
+                <option value="50000-70000">$50.000 - $70.000</option>
+                <option value="70000-999999">Más de $70.000</option>
+            </select>
+
+            <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar Filtros</button>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR DE TODOS LOS PRODUCTOS -->
+    <div class="contenedor-productos" id="contenedor-productos">
+        
+        <!-- PRODUCTO 1 -->
+        <div class="card-producto" 
+             data-id="1" 
+             data-marca="Syna World" 
+             data-precio="49990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Syna World Negro">
+            <div class="card-imagen">
+                <img src="poleron syna world negro full.webp" alt="Polerón Syna World Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Syna World</span>
+                <h3>Polerón Syna World Negro</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 2 -->
+        <div class="card-producto" 
+             data-id="2" 
+             data-marca="Sp5der" 
+             data-precio="54990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Sp5der Negro y Amarillo">
+            <div class="card-imagen">
+                <img src="poleron sp5der negro amarillo.jpg" alt="Polerón Sp5der">
+            </div>
+            <div class="card-info">
+                <span class="marca">Sp5der</span>
+                <h3>Polerón Sp5der Negro y Amarillo</h3>
+                <p class="precio">$54.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(2)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 3 -->
+        <div class="card-producto" 
+             data-id="3" 
+             data-marca="Syna World" 
+             data-precio="49990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Syna World Verde">
+            <div class="card-imagen">
+                <img src="poleron syna world negro verde.webp" alt="Polerón Syna World Verde">
+            </div>
+            <div class="card-info">
+                <span class="marca">Syna World</span>
+                <h3>Polerón Syna World Verde</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(3)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 4 -->
+        <div class="card-producto" 
+             data-id="4" 
+             data-marca="Nike" 
+             data-precio="79990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Fleece Azul">
+            <div class="card-imagen">
+                <img src="nike tech azul.webp" alt="Nike Tech Fleece">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Fleece Azul</h3>
+                <p class="precio">$79.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(4)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 5 -->
+        <div class="card-producto" 
+             data-id="5" 
+             data-marca="Corteiz" 
+             data-precio="65990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Corteiz Negro Estrellas">
+            <div class="card-imagen">
+                <img src="corteiz negro estrellas.png" alt="Corteiz Estrellas">
+            </div>
+            <div class="card-info">
+                <span class="marca">Corteiz</span>
+                <h3>Polerón Corteiz Negro Estrellas</h3>
+                <p class="precio">$65.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(5)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 6 -->
+        <div class="card-producto" 
+             data-id="6" 
+             data-marca="Corteiz" 
+             data-precio="65990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Corteiz Blanco">
+            <div class="card-imagen">
+                <img src="corteiz epico blanco.webp" alt="Corteiz Blanco">
+            </div>
+            <div class="card-info">
+                <span class="marca">Corteiz</span>
+                <h3>Polerón Corteiz Blanco</h3>
+                <p class="precio">$65.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(6)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 7 -->
+        <div class="card-producto" 
+             data-id="7" 
+             data-marca="Trapstar" 
+             data-precio="50000"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar Amarillo">
+            <div class="card-imagen">
+                <img src="trapstar linea amarilla.webp" alt="Trapstar Amarillo">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar Amarillo</h3>
+                <p class="precio">$50.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(7)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 8 -->
+        <div class="card-producto" 
+             data-id="8" 
+             data-marca="Trapstar" 
+             data-precio="65000"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar azul rayos">
+            <div class="card-imagen">
+                <img src="trapstar azul rayos.jpeg" alt="Trapstar azul rayos">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar azul rayos</h3>
+                <p class="precio">$65.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(8)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 9 -->
+        <div class="card-producto" 
+             data-id="9" 
+             data-marca="Trapstar" 
+             data-precio="59000"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar shooters Negro">
+            <div class="card-imagen">
+                <img src="poleron shoteers full negro.webp" alt="Trapstar shooters negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar Shooters negro</h3>
+                <p class="precio">$59.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(9)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 10 -->
+        <div class="card-producto" 
+             data-id="10" 
+             data-marca="Nike" 
+             data-precio="85990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Fleece Negro">
+            <div class="card-imagen">
+                <img src="poleron nike tech negro.webp" alt="Polerón Nike Tech Fleece Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Fleece Negro</h3>
+                <p class="precio">$85.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(10)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 11 -->
+        <div class="card-producto" 
+             data-id="11" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Negro Blancas">
+            <div class="card-imagen">
+                <img src="demin tears negro flores blancas.webp" alt="Denim Tears Negro Flores Blancas">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Negro Flores Blancas</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(11)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 12 -->
+        <div class="card-producto" 
+             data-id="12" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Rosa Blanco">
+            <div class="card-imagen">
+                <img src="Poleron demin tears rosa blanco.webp" alt="Polerón Denim Tears Rosa Blanco">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Rosa Blanco</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(12)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 13 -->
+        <div class="card-producto" 
+             data-id="13" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Azul Blanco">
+            <div class="card-imagen">
+                <img src="demin tears azul blanco.avif" alt="Denim Tears Azul Blanco">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Azul blanco</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(13)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 14 -->
+        <div class="card-producto" 
+             data-id="14" 
+             data-marca="Demin Tears" 
+             data-precio="75990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Gris Blanco">
+            <div class="card-imagen">
+                <img src="poleron demin tears gris blanco.webp" alt="Denim Tears Gris Blanco">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Gris Blanco</h3>
+                <p class="precio">$75.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(14)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 15 -->
+        <div class="card-producto" 
+             data-id="15" 
+             data-marca="Demin Tears" 
+             data-precio="78990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Denim Tears Verde Blanco">
+            <div class="card-imagen">
+                <img src="poleron demin tears verde blanco.avif" alt="Denim Tears Verde">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Polerón Denim Tears Verde Blanco</h3>
+                <p class="precio">$78.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(15)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 16 -->
+        <div class="card-producto" 
+             data-id="16" 
+             data-marca="Trapstar" 
+             data-precio="69990"
+             data-tipo="Polerón"
+             data-nombre="Polerón trapstar shooters rojo">
+            <div class="card-imagen">
+                <img src="poleron trapstar shooes rojo.jpeg" alt="Trapstar Shooters Rojo">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón trapstar shooters rojo</h3>
+                <p class="precio">$69.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(16)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 17 -->
+        <div class="card-producto" 
+             data-id="17" 
+             data-marca="Trapstar" 
+             data-precio="72990"
+             data-tipo="Chaqueta"
+             data-nombre="Chaqueta Trapstar Irongate Negro Blanco">
+            <div class="card-imagen">
+                <img src="casaca trapstar irongate blanca.avif" alt="Trapstar Irongate">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Chaqueta Trapstar Irongate Negro Blanco</h3>
+                <p class="precio">$72.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(17)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 18 -->
+        <div class="card-producto" 
+             data-id="18" 
+             data-marca="Trapstar" 
+             data-precio="68990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Trapstar Shooters Gris azul">
+            <div class="card-imagen">
+                <img src="poleron shooters gris azul.jpg" alt="Trapstar Shooters Gris">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Polerón Trapstar Shooters Gris azul</h3>
+                <p class="precio">$68.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(18)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 19 -->
+        <div class="card-producto" 
+             data-id="19" 
+             data-marca="Nike" 
+             data-precio="84990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Gris">
+            <div class="card-imagen">
+                <img src="poleron nike tech gris.jpg" alt="Nike Tech Gris">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Gris</h3>
+                <p class="precio">$84.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(19)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 20 -->
+        <div class="card-producto" 
+             data-id="20" 
+             data-marca="Nike" 
+             data-precio="86990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Verde">
+            <div class="card-imagen">
+                <img src="poleron nike tech verde.webp" alt="Nike Tech Verde">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Verde</h3>
+                <p class="precio">$86.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(20)">Agregar al Carrito</button>
+            </div>
+        </div><!-- PRODUCTO 21 -->
+        <div class="card-producto" 
+             data-id="21" 
+             data-marca="Nike" 
+             data-precio="87990"
+             data-tipo="Polerón"
+             data-nombre="Polerón Nike Tech Morado">
+            <div class="card-imagen">
+                <img src="poleron nike tech morado.avif" alt="Nike Tech Morado">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Polerón Nike Tech Morado</h3>
+                <p class="precio">$87.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(21)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 22 -->
+        <div class="card-producto" 
+             data-id="22" 
+             data-marca="Trapstar" 
+             data-precio="62990"
+             data-tipo="Pantalón"
+             data-nombre="Trapstar Pantalón naranjo">
+            <div class="card-imagen">
+                <img src="pantalon trapstar shoters naranjo.webp" alt="Trapstar Pantalón Naranjo">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Trapstar Pantalón naranjo</h3>
+                <p class="precio">$62.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(22)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 23 -->
+        <div class="card-producto" 
+             data-id="23" 
+             data-marca="Trapstar" 
+             data-precio="64990"
+             data-tipo="Chaqueta"
+             data-nombre="Chaqueta trapstar celeste hielo">
+            <div class="card-imagen">
+                <img src="casaca trapstar blanca hd 4ka.webp" alt="Chaqueta Trapstar Celeste">
+            </div>
+            <div class="card-info">
+                <span class="marca">Trapstar</span>
+                <h3>Chaqueta trapstar celeste hielo</h3>
+                <p class="precio">$64.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(23)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 24 -->
+        <div class="card-producto" 
+             data-id="24" 
+             data-marca="Nike" 
+             data-precio="69990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón nike Tech Negro">
+            <div class="card-imagen">
+                <img src="pantalon nike tech negro.webp" alt="Pantalón Nike Tech Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Pantalón nike Tech Negro</h3>
+                <p class="precio">$69.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(24)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 25 -->
+        <div class="card-producto" 
+             data-id="25" 
+             data-marca="Nike" 
+             data-precio="68990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón Nike Tech Gris">
+            <div class="card-imagen">
+                <img src="pantalon nike tech gris.avif" alt="Pantalón Nike Tech Gris">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Pantalón Nike Tech Gris</h3>
+                <p class="precio">$68.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(25)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 26 -->
+        <div class="card-producto" 
+             data-id="26" 
+             data-marca="Demin Tears" 
+             data-precio="89990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón buzo demin Tears Negro">
+            <div class="card-imagen">
+                <img src="pantalon buzo demin tears negro.webp" alt="Denim Tears Pantalón Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Pantalón buzo demin Tears Negro</h3>
+                <p class="precio">$89.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(26)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 27 -->
+        <div class="card-producto" 
+             data-id="27" 
+             data-marca="Demin Tears" 
+             data-precio="89990"
+             data-tipo="Pantalón"
+             data-nombre="Pantalón buzo Denim Tears Azul">
+            <div class="card-imagen">
+                <img src="pantalon buzo denim tears azul buzo.webp" alt="Denim Tears Pantalón Azul">
+            </div>
+            <div class="card-info">
+                <span class="marca">Demin Tears</span>
+                <h3>Pantalón buzo Denim Tears Azul</h3>
+                <p class="precio">$89.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(27)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 28 -->
+        <div class="card-producto" 
+             data-id="28" 
+             data-marca="Nike" 
+             data-precio="94990"
+             data-tipo="Zapatillas"
+             data-nombre="Nike Air Force 1 Blanca">
+            <div class="card-imagen">
+                <img src="air force one blanca.jpg" alt="Nike Air Force 1 Blanca">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Nike Air Force 1 Blanca</h3>
+                <p class="precio">$94.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(28)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 29 -->
+        <div class="card-producto" 
+             data-id="29" 
+             data-marca="Adidas" 
+             data-precio="149990"
+             data-tipo="Zapatillas"
+             data-nombre="Adidas Yeezy Boost 350 V2">
+            <div class="card-imagen">
+                <img src="yezy.webp" alt="Adidas Yeezy Boost 350 V2">
+            </div>
+            <div class="card-info">
+                <span class="marca">Adidas</span>
+                <h3>Adidas Yeezy Boost 350 V2</h3>
+                <p class="precio">$149.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(29)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 30 -->
+        <div class="card-producto" 
+             data-id="30" 
+             data-marca="Nike" 
+             data-precio="109990"
+             data-tipo="Zapatillas"
+             data-nombre="Nike Air Jordan 1 Mid">
+            <div class="card-imagen">
+                <img src="jordan 1 negras.png" alt="Nike Air Jordan 1 Mid">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Nike Air Jordan 1 Mid</h3>
+                <p class="precio">$109.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(30)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 31 -->
+        <div class="card-producto" 
+             data-id="31" 
+             data-marca="Stussy" 
+             data-precio="55990"
+             data-tipo="Polerón"
+             data-nombre="Stussy Basic Logo Hoodie Gris">
+            <div class="card-imagen">
+                <img src="poleron stussi.png" alt="Stussy Basic Logo Hoodie Gris">
+            </div>
+            <div class="card-info">
+                <span class="marca">Stussy</span>
+                <h3>Stussy Basic Logo Hoodie Gris</h3>
+                <p class="precio">$55.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(31)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 32 -->
+        <div class="card-producto" 
+             data-id="32" 
+             data-marca="Carhartt" 
+             data-precio="69990"
+             data-tipo="Polerón"
+             data-nombre="Carhartt WIP Chase Hoodie Marrón">
+            <div class="card-imagen">
+                <img src="poleron carhartt.png" alt="Carhartt WIP Chase Hoodie Marrón">
+            </div>
+            <div class="card-info">
+                <span class="marca">Carhartt</span>
+                <h3>Carhartt WIP Chase Hoodie Marrón</h3>
+                <p class="precio">$69.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(32)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 33 -->
+        <div class="card-producto" 
+             data-id="33" 
+             data-marca="Nike" 
+             data-precio="29990"
+             data-tipo="Polera"
+             data-nombre="Nike Sportswear Club Tee Negro">
+            <div class="card-imagen">
+                <img src="polera nike fit negra.jpg" alt="Nike Sportswear Club Tee Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Nike Sportswear Club Tee Negro</h3>
+                <p class="precio">$29.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(33)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 34 -->
+        <div class="card-producto" 
+             data-id="34" 
+             data-marca="Adidas" 
+             data-precio="32990"
+             data-tipo="Polera"
+             data-nombre="Adidas Essential 3-Stripes Tee">
+            <div class="card-imagen">
+                <img src="polera adidas lineas negra.png" alt="Adidas Essential 3-Stripes Tee">
+            </div>
+            <div class="card-info">
+                <span class="marca">Adidas</span>
+                <h3>Adidas Essential 3-Stripes Tee</h3>
+                <p class="precio">$32.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(34)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 35 -->
+        <div class="card-producto" 
+             data-id="35" 
+             data-marca="Nike" 
+             data-precio="84990"
+             data-tipo="Chaqueta"
+             data-nombre="Nike Windrunner Jacket Azul">
+            <div class="card-imagen">
+                <img src="chauqeta azul.png" alt="Nike Windrunner Jacket Azul">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Nike Windrunner Jacket Azul</h3>
+                <p class="precio">$84.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(35)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 36 -->
+        <div class="card-producto" 
+             data-id="36" 
+             data-marca="Adidas" 
+             data-precio="79990"
+             data-tipo="Chaqueta"
+             data-nombre="Adidas SST Track Jacket Negro">
+            <div class="card-imagen">
+                <img src="chandal negro adidas 2 lineas.png" alt="Adidas SST Track Jacket Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Adidas</span>
+                <h3>Adidas SST Track Jacket Negro</h3>
+                <p class="precio">$79.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(36)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 37 -->
+        <div class="card-producto" 
+             data-id="37" 
+             data-marca="Nike" 
+             data-precio="99990"
+             data-tipo="Zapatillas"
+             data-nombre="Nike Dunk Low Retro Panda">
+            <div class="card-imagen">
+                <img src="nike dunk low retro negra.png" alt="Nike Dunk Low Retro Panda">
+            </div>
+            <div class="card-info">
+                <span class="marca">Nike</span>
+                <h3>Nike Dunk Low Retro Panda</h3>
+                <p class="precio">$99.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(37)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 38 -->
+        <div class="card-producto" 
+             data-id="38" 
+             data-marca="Vans" 
+             data-precio="64990"
+             data-tipo="Zapatillas"
+             data-nombre="Vans Old Skool Classic Negro">
+            <div class="card-imagen">
+                <img src="vans old schol.png" alt="Vans Old Skool Classic Negro">
+            </div>
+            <div class="card-info">
+                <span class="marca">Vans</span>
+                <h3>Vans Old Skool Classic Negro</h3>
+                <p class="precio">$64.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(38)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 39 -->
+        <div class="card-producto" 
+             data-id="39" 
+             data-marca="Converse" 
+             data-precio="59990"
+             data-tipo="Zapatillas"
+             data-nombre="Converse Chuck Taylor All Star">
+            <div class="card-imagen">
+                <img src="vans geis.png" alt="Converse Chuck Taylor All Star">
+            </div>
+            <div class="card-info">
+                <span class="marca">Converse</span>
+                <h3>Converse Chuck Taylor All Star</h3>
+                <p class="precio">$59.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito(39)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
